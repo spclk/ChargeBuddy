@@ -1,9 +1,16 @@
 
-const Car = require("../models/Car");
+const db = require("../models");
+const mongoose = require("mongoose");
 
 
-
-
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/chargebuddy_db", {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+}
+);
 
 const carData = [
     {
@@ -50,7 +57,7 @@ const carData = [
     },
 
 ];
+const seedCar = () => db.Car.collection.insertMany(carData)
+// const seedCar = () => carData.bulkCreate(cardata);
 
-const seedCar = () => carData.bulkCreate(cardata);
-
-module.exports = seedCar;
+seedCar();
