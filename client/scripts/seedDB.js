@@ -1,14 +1,11 @@
-const mongoose = require("mongoose");
-const db = require("../models");
+
+const { Car } = require("../models/Car");
 
 
 
-mongoose.connect(
-    process.env.MONGODB_URI ||
-    "mongodb://localhost/electricDb"
-);
 
-const electricCarSeed = [
+
+const carData = [
     {
         make: "Tesla",
         model: "Model 3",
@@ -52,16 +49,8 @@ const electricCarSeed = [
         date: new Date(Date.now())
     },
 
-]
+];
 
-db.electricCar
-    .remove({})
-    .then(() => db.electricCar.collection.insertMany(electricCarSeed))
-    .then(data => {
-        console.log(data.result.n + " cars inserted!");
-        process.exit(0);
-    })
-    .catch(err => {
-        console.error(err);
-        process.exit(1);
-    })
+const seedCar = () => CarModel.bulkCreate(cardata);
+
+module.exports = seedCar;
