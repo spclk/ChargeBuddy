@@ -1,10 +1,6 @@
 
 const Car = require("../models/Car");
 
-
-
-
-
 const carData = [
     {
         make: "Tesla",
