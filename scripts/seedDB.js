@@ -1,5 +1,5 @@
 
-const { Car } = require("../models/Car");
+const Car = require("../models/Car");
 
 
 
@@ -51,6 +51,6 @@ const carData = [
 
 ];
 
-const seedCar = () => CarModel.bulkCreate(cardata);
+const seedCar = () => carData.bulkCreate(cardata);
 
 module.exports = seedCar;
