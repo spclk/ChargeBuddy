@@ -1,14 +1,18 @@
-const mongoose = require("mongoose");
-const db = require("../models");
 
+const db = require("../models");
+const mongoose = require("mongoose");
 
 
 mongoose.connect(
-    process.env.MONGODB_URI ||
-    "mongodb://localhost/electricDb"
+    process.env.MONGODB_URI || "mongodb://localhost/chargebuddy_db", {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+}
 );
 
-const electricCarSeed = [
+const carData = [
     {
         make: "Tesla",
         model: "Model 3",
@@ -52,16 +56,8 @@ const electricCarSeed = [
         date: new Date(Date.now())
     },
 
-]
+];
+const seedCar = () => db.Car.collection.insertMany(carData)
+// const seedCar = () => carData.bulkCreate(cardata);
 
-db.electricCar
-    .remove({})
-    .then(() => db.electricCar.collection.insertMany(electricCarSeed))
-    .then(data => {
-        console.log(data.result.n + " cars inserted!");
-        process.exit(0);
-    })
-    .catch(err => {
-        console.error(err);
-        process.exit(1);
-    })
+seedCar();
