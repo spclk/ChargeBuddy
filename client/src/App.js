@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect}  from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
@@ -11,14 +11,12 @@ function App() {
     var elems = document.querySelectorAll('.parallax');
     var instances = M.Parallax.init(elems, {});
   },[]);
-  
+
   return (
     <Router>
       <div>
         <Navbar />
-          <Route exact path="/" component={Main} />
           <Route exact path="/login" component={Login} />
-        <Footer />
       </div>
     </Router>
   )
