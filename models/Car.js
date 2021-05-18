@@ -1,31 +1,39 @@
 const mongoose = require("mongoose");
 
+
+
 const Schema = mongoose.Schema;
 // still need to finish the id object auto increment and primary KeyboardEvent. Create Date object
-
-const userSchema = new Schema({
+const carSchema = new Schema({
     day: {
         type: Date,
         default: Date.now
     },
-    users: [
+    cars: [
         {
-            email: {
-                type: String,
-                unique: true,
-                match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+            id: {
+                type: Number,
+                required: true,
+
             },
-            password: {
+
+            make: {
                 type: String,
-                trim: true,
-                required: "Password is Required",
-                validate: [({ length }) => length >= 8, "Password should be longer."]
+                required: true
+            },
+            model: {
+                type: String,
+                required: true
+            },
+            year: {
+                type: Number,
+                required: true
+
             },
             userCreated: {
                 type: Date,
                 default: Date.now
             }
-
         }
     ]
 },
@@ -35,6 +43,6 @@ const userSchema = new Schema({
         }
     });
 
-const User = mongoose.model("User", userSchema);
+const Car = mongoose.model("Car", carSchema);
 
-module.exports = User;
+module.exports = Car;
