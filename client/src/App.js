@@ -16,7 +16,7 @@ function App() {
   },[]);
 
   return (
-    // Router needed to navigate between pages/components
+    // Router is needed to navigate between pages/components
     <Router>
       <div>
         <Navbar />

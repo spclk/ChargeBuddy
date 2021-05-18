@@ -10,7 +10,6 @@ function Login() {
               <div className="card-login-splash">
                 <div className="wrapper">
                   <h3>Account</h3>
-
                   <a className="btn" href="#!">
                     Sign In
                   </a>
@@ -18,7 +17,6 @@ function Login() {
                     Register
                   </a>
                 </div>
-
                 <img
                   src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/geometric-cave.jpg?v=13127282243134125143"
                   alt=""
@@ -35,9 +33,7 @@ function Login() {
                     <input id="password" type="password" className="validate" />
                     <label for="password">Password</label>
                   </div>
-
                   <a href="#!">Forgot Password?</a>
-
                   <br />
                   <br />
                   <div>
