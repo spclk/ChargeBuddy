@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 // importing Components
-import Login from "./components/Login";
-import Navbar from "./components/Navbar";
+import Login from "./components/Login/Login";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 

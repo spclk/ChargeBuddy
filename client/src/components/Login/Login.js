@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 function Login() {
   return (
@@ -6,7 +7,7 @@ function Login() {
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
-            <div className="card card-login">
+            <div className="card large card-login">
               <div className="card-login-splash">
                 <div className="wrapper">
                   <h3>Account</h3>
