@@ -3,18 +3,18 @@ import React from "react";
 function Login() {
   return (
     <main>
-      <div class="container">
-        <div class="row">
-          <div class="col s8 offset-s2">
-            <div class="card card-login">
-              <div class="card-login-splash">
-                <div class="wrapper">
+      <div className="container">
+        <div className="row">
+          <div className="col s8 offset-s2">
+            <div className="card card-login">
+              <div className="card-login-splash">
+                <div className="wrapper">
                   <h3>Account</h3>
 
-                  <a class="btn" href="#!">
+                  <a className="btn" href="#!">
                     Sign In
                   </a>
-                  <a class="btn" href="#!">
+                  <a className="btn" href="#!">
                     Register
                   </a>
                 </div>
@@ -24,15 +24,15 @@ function Login() {
                   alt=""
                 />
               </div>
-              <div class="card-content">
-                <span class="card-title">Log In</span>
+              <div className="card-content">
+                <span className="card-title">Log In</span>
                 <form>
-                  <div class="input-field">
-                    <input id="username" type="text" class="validate" />
+                  <div className="input-field">
+                    <input id="username" type="text" className="validate" />
                     <label for="username">Username</label>
                   </div>
-                  <div class="input-field">
-                    <input id="password" type="password" class="validate" />
+                  <div className="input-field">
+                    <input id="password" type="password" className="validate" />
                     <label for="password">Password</label>
                   </div>
 
@@ -41,8 +41,8 @@ function Login() {
                   <br />
                   <br />
                   <div>
-                    <input class="btn right" type="submit" value="Log In" />
-                    <a href="#!" class="btn-flat">
+                    <input className="btn right" type="submit" value="Log In" />
+                    <a href="#!" className="btn-flat">
                       Back
                     </a>
                   </div>
