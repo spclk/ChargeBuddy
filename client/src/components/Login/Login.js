@@ -6,8 +6,9 @@ function Login() {
     <main>
       <div className="container">
         <div className="row">
-          <div className="col s8 offset-s2">
+          <div className="col s12">
             <div className="card large card-login">
+              {/* left side content */}
               <div className="card-login-splash">
                 <div className="wrapper">
                   <h3>Account</h3>
@@ -23,6 +24,7 @@ function Login() {
                   alt=""
                 />
               </div>
+              {/* right side content */}
               <div className="card-content">
                 <span className="card-title">Log In</span>
                 <form>
