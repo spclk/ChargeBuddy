@@ -1,48 +1,29 @@
-import React, { Component } from "react";
-// import logo from "./logo.svg";
-import Navbar from "./components/Navbar";
-import Main from "./components/pages/main"
-import Footer from "./components/Footer";
-import "./App.css";
+import React, {useEffect}  from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// importing Materialize.css
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+// importing Components
+import Login from "./components/Login/Login";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 
+  // do not remove 
+  // useEffect is needed for Materialize JavaScript elements to work
   useEffect(() => {
-    var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems, {});
+    M.AutoInit();
   },[]);
 
   return (
-    <div>
-      <Navbar />
-      <Router>
-        <Switch>
-          <Route exact path= "/" component={Main}/>
-        </Switch>
-      </Router>
-      <Footer />
-    </div>
-  );
-
+    // Router is needed to navigate between pages/components
+    <Router>
+      <div>
+        <Navbar />
+          <Route exact path="/login" component={Login} />
+      </div>
+    </Router>
+  )
 }
 
 export default App;

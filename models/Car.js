@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
+
+
 const Schema = mongoose.Schema;
-// still need to finish the id object auto increment and primary KeyboardEvent. Create Date object
+
 const carSchema = new Schema({
     day: {
         type: Date,

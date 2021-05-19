@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // still need to finish the id object auto increment and primary KeyboardEvent. Create Date object
 
+
 const userSchema = new Schema({
     day: {
         type: Date,
@@ -23,7 +24,7 @@ const userSchema = new Schema({
             },
             userCreated: {
                 type: Date,
-                default: Date.no
+                default: Date.now
             }
 
         }
