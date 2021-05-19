@@ -7,7 +7,7 @@ function Login() {
       <div className="container"> {/* without this container card would take up the whole page */}
         <div className="row">
           <div className="col s12">
-            <div className="card large card-login">
+            <div className="card medium card-login">
               {/* left side content */}
               <div className="card-login-splash">
                 <div className="wrapper">
