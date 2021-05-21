@@ -1,0 +1,32 @@
+/* allows items in the container to be ordered side-by-side*/
+.card.card-login {
+    display: flex;
+    flex-direction: row;
+}
+
+.card.card-login .card-content {
+    flex: 1;
+  }
+
+
+.card.card-login .card-login-splash {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex: 1;
+}
+
+/* Login image styling */
+.card.card-login .card-login-splash img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    display: block;
+    z-index: -1;
+}
+
