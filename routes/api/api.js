@@ -1,5 +1,15 @@
-const express = require("express");
+const router = require("express").Router();
+
+const 
+
+
+
 const router = express.Router();
+
+
+
+
+
 
 router.get("/", function (req, res) {
   res.send({ type: "GET" });
