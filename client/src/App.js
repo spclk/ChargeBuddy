@@ -6,6 +6,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import Login from "./components/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
 import Container from './components/Container';
+import Footer from "./components/Footer/Footer"
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         <Navbar />
         <Route exact path="/login" component={Login} />
         <Container />
-
+        <Footer />
       </div>
     </Router>
   )
