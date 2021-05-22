@@ -5,6 +5,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 // importing Components
 import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
     <Router>
       <div>
         <Navbar />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/register" component={Register} />
       </div>
     </Router>
   )
