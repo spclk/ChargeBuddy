@@ -74,7 +74,7 @@ function Register() {
                       className=""
                     />
                   </div>
-
+                  
                   <p>
                     <input
                       type="submit"
@@ -82,6 +82,8 @@ function Register() {
                       className="btn-large z-depth-0"
                     />
                   </p>
+                  <br/>
+                  <a href="/login">Already registered? Login here!</a>
                 </form>
               </div>
             </div>
