@@ -21,6 +21,16 @@ const userData = [
         email: "mybabysforeheadisanashtray@yahoo.com",
         password: 12345678,
 
+        car: [
+            {
+                make: "tesla",
+                model: "Model 3",
+                year: 2020,
+                date: new Date(Date.now()),
+                evPort: "J1772"
+            }
+        ]
+
 
     },
     {
@@ -29,6 +39,15 @@ const userData = [
         zip_code: 90035,
         email: "prostitutesarefun@gmail.com",
         password: 12345678,
+        car: [
+            {
+                make: "Nissan",
+                model: "LEAF",
+                year: 2020,
+                date: new Date(Date.now()),
+                evPort: "CHAdeMO"
+            }
+        ]
 
 
     },
@@ -38,7 +57,15 @@ const userData = [
         zip_code: 90210,
         email: "iamflatoutcrazy@gmail.com",
         password: 12345678,
-
+        car: [
+            {
+                make: "Hyundai",
+                model: "loniq EV",
+                year: 2021,
+                evPort: "J1772",
+                date: new Date(Date.now()),
+            }
+        ]
 
     },
     {
@@ -47,6 +74,15 @@ const userData = [
         zip_code: 90211,
         email: "cocaineanyone?@hotmail.com",
         password: 12345678,
+        car: [
+            {
+                make: "Audi",
+                model: "e-tron",
+                year: 2021,
+                evPort: "CHAdeMO",
+                date: new Date(Date.now()),
+            }
+        ]
 
 
     },
@@ -56,6 +92,15 @@ const userData = [
         zip_code: 93108,
         email: "clarkgriswald@gmail.com",
         password: 12345678,
+        car: [
+            {
+                make: "Porsche",
+                model: "Taycan",
+                year: 2020,
+                evPort: "J1772COMBO",
+                date: new Date(Date.now()),
+            }
+        ]
 
 
     },
@@ -63,6 +108,8 @@ const userData = [
 
 ];
 const seedUser = () => db.User.collection.insertMany(userData)
-
+    .catch((err) => {
+        console.log(err)
+    })
 
 seedUser();
