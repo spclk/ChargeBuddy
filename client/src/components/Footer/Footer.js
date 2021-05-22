@@ -5,8 +5,8 @@ const Footer = () => {
     <footer className="page-footer card-content valign center">
       <div className="nav-content">
         <ul className="tabs tabs-transparent">
-          <li className="tab">
-            <a href="#test1">Test 1</a>
+          <li className="tab material-icons">
+            <a href="#test1">Home</a>
           </li>
           <li className="tab">
             <a href="#test2">Test 2</a>
