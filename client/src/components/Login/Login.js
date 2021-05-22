@@ -15,6 +15,7 @@ function Login() {
                   <a className="btn" href="#!">
                     Sign In
                   </a>
+                  {" "} {/* Adds whitespace between two buttons*/}
                   <a className="btn" href="#!">
                     Register
                   </a>
