@@ -35,7 +35,17 @@ const userSchema = new Schema({
     userCreated: {
         type: Date,
         default: Date.now
+    },
+
+    car: {
+        type: Array,
+        default: []
     }
+
+
+
+
+
 
 
 
