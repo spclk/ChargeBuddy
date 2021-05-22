@@ -21,7 +21,7 @@ function Register() {
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
-                  <h4 className="center">Create Account</h4>
+                  <h4 className="center">About Yourself</h4>
 
                   <div className="input-field">
                     <label for="FirstName">First Name</label>
@@ -43,6 +43,15 @@ function Register() {
                   </div>
 
                   <div className="input-field">
+                    <label for="ZipCode">Zip Code</label>
+                    <input
+                      type="text"
+                      name="customer[last_name]"
+                      id="ZipCode"
+                    />
+                  </div>
+
+                  <div className="input-field">
                     <label for="Email">Email</label>
                     <input
                       type="email"
@@ -57,7 +66,7 @@ function Register() {
                   </div>
 
                   <div className="input-field">
-                    <label for="CreatePassword">Password</label>
+                    <label for="CreatePassword">Create a Password</label>
                     <input
                       type="password"
                       name="customer[password]"
@@ -69,7 +78,7 @@ function Register() {
                   <p>
                     <input
                       type="submit"
-                      value="Create"
+                      value="Register"
                       className="btn-large z-depth-0"
                     />
                   </p>
