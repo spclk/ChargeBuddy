@@ -1,5 +1,8 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+
+  /* Footer Styling */
+  footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+
+  }
