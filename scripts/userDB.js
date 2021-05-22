@@ -21,7 +21,7 @@ const userData = [
         email: "mybabysforeheadisanashtray@yahoo.com",
         password: 12345678,
 
-        date: new Date(Date.now())
+
     },
     {
         first_name: "Charlie",
@@ -30,7 +30,7 @@ const userData = [
         email: "prostitutesarefun@gmail.com",
         password: 12345678,
 
-        date: new Date(Date.now())
+
     },
     {
         first_name: "Gary",
@@ -39,7 +39,7 @@ const userData = [
         email: "iamflatoutcrazy@gmail.com",
         password: 12345678,
 
-        date: new Date(Date.now())
+
     },
     {
         first_name: "Tom",
@@ -48,7 +48,7 @@ const userData = [
         email: "cocaineanyone?@hotmail.com",
         password: 12345678,
 
-        date: new Date(Date.now())
+
     },
     {
         first_name: "Randy",
@@ -57,13 +57,12 @@ const userData = [
         email: "clarkgriswald@gmail.com",
         password: 12345678,
 
-        date: new Date(Date.now())
+
     },
 
 
 ];
 const seedUser = () => db.User.collection.insertMany(userData)
-    .then(process.exit(0))
-    .catch(err => console.log(err))
+
 
 seedUser();
