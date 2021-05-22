@@ -21,9 +21,9 @@ const carData = [
         date: new Date(Date.now())
     },
     {
-        make: "Tesla",
-        model: "Model 3",
-        year: 2020,
+        make: "Hyundai",
+        model: "loniq EV",
+        year: 2021,
 
         date: new Date(Date.now())
     },
@@ -58,6 +58,6 @@ const carData = [
 
 ];
 const seedCar = () => db.Car.collection.insertMany(carData)
-// const seedCar = () => carData.bulkCreate(cardata);
+
 
 seedCar();
