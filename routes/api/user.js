@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const userController = require("../../controllers/carController");
+const userController = require("../../controllers/carControllers");
 
 // Matches with "/api/user"
-router  
+router
     .route("/").get(userController.findAll)
     .post(userController.create);
 
