@@ -1,4 +1,4 @@
-import React, {useEffect}  from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // importing Materialize.css
 import 'materialize-css/dist/css/materialize.min.css';
@@ -7,6 +7,8 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Navbar from "./components/Navbar/Navbar";
+import Container from './components/Container/Container';
+
 
 function App() {
 
@@ -14,7 +16,7 @@ function App() {
   // useEffect is needed for Materialize JavaScript elements to work
   useEffect(() => {
     M.AutoInit();
-  },[]);
+  }, []);
 
   return (
     // Router is needed to navigate between pages/components
@@ -23,9 +25,14 @@ function App() {
         <Navbar />
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Container />
+
       </div>
     </Router>
   )
 }
+
+
 
 export default App;
