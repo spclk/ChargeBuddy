@@ -7,7 +7,7 @@ function Signup() {
       <div className="container">
         <div className="row">
           <div className="col s12">
-            <div className="card login-wrapper">
+            <div className="card card-login">
               {/* left side content */}
               <div className="card-content">
                 <form
@@ -22,7 +22,7 @@ function Signup() {
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
-                  <h4 className="center">About Yourself</h4>
+                  <h6 className="center">TELL US ABOUT YOURSELF</h6>
 
                   <div className="input-field">
                     <label for="FirstName">First Name</label>
@@ -47,7 +47,7 @@ function Signup() {
                     <label for="ZipCode">Zip Code</label>
                     <input
                       type="text"
-                      name="customer[last_name]"
+                      name="customer[ZipCode]"
                       id="ZipCode"
                     />
                   </div>
@@ -92,59 +92,30 @@ function Signup() {
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
-                  <h4 className="center">About Yourself</h4>
+                  <h6 className="center">TELL US ABOUT YOUR VEHICLE</h6>
 
                   <div className="input-field">
-                    <label for="FirstName">First Name</label>
+                    <label for="Make">Make</label>
                     <input
                       type="text"
-                      name="customer[first_name]"
-                      id="FirstName"
+                      name="customer[make]"
+                      id="Make"
                       autofocus
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="LastName">Last Name</label>
+                    <label for="Model">Model</label>
                     <input
                       type="text"
-                      name="customer[last_name]"
-                      id="LastName"
+                      name="customer[model]"
+                      id="Model"
                     />
                   </div>
 
-                  <div className="input-field">
-                    <label for="ZipCode">Zip Code</label>
-                    <input
-                      type="text"
-                      name="customer[last_name]"
-                      id="ZipCode"
-                    />
-                  </div>
+                  
 
-                  <div className="input-field">
-                    <label for="Email">Email</label>
-                    <input
-                      type="email"
-                      name="customer[email]"
-                      id="Email"
-                      className=""
-                      value=""
-                      spellcheck="false"
-                      autocomplete="off"
-                      autocapitalize="off"
-                    />
-                  </div>
-
-                  <div className="input-field">
-                    <label for="CreatePassword">Create a Password</label>
-                    <input
-                      type="password"
-                      name="customer[password]"
-                      id="CreatePassword"
-                      className=""
-                    />
-                  </div>
+                  
 
                   <p>
                     <input
