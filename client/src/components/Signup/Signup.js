@@ -113,10 +113,17 @@ function Signup() {
                     />
                   </div>
 
-                  
+                  <div className="chip">
+                  <img src="" alt=""/>
+                  J1772
+                  </div>
 
+                  <div class="chip">
+                  <img src="" alt=""/>
+                  CHADEMO
+                  </div>
                   
-
+                  {/* <br/> */}
                   <p>
                     <input
                       type="submit"
