@@ -22,7 +22,7 @@ function Signup() {
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
-                  <h6 className="center">TELL US ABOUT YOURSELF</h6>
+                  <h5 className="center">ABOUT YOU</h5>
 
                   <div className="input-field">
                     <label for="FirstName">First Name</label>
@@ -92,7 +92,7 @@ function Signup() {
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
-                  <h6 className="center">TELL US ABOUT YOUR VEHICLE</h6>
+                  <h5 className="center">ABOUT YOUR VEHICLE</h5>
 
                   <div className="input-field">
                     <label for="Make">Make</label>
@@ -122,7 +122,17 @@ function Signup() {
                   <img src="" alt=""/>
                   CHADEMO
                   </div>
-                  
+
+                  <div class="chip">
+                  <img src="" alt=""/>
+                  NEMA520
+                  </div>
+
+                  <div class="chip">
+                  <img src="" alt=""/>
+                  J1772COMBO
+                  </div>
+
                   {/* <br/> */}
                   <p>
                     <input
@@ -145,4 +155,3 @@ function Signup() {
 }
 
 export default Signup;
-
