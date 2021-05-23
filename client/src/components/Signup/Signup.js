@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Register() {
+function Signup() {
   return (
     <main>
       <div className="container">
@@ -166,5 +166,5 @@ function Register() {
   );
 }
 
-export default Register;
+export default Signup;
 
