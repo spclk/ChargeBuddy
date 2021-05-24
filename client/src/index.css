@@ -1,9 +1,18 @@
+/* Footer Styling */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
-  /* Footer Styling */
-  footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+.footerFont {
+  font-size: small;
+}
 
-  }
+/*Custom Text Color While Active*/
+.tabs .tab a:focus.active {
+  color: black;
+
+}
+
 
