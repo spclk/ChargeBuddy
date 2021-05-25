@@ -113,22 +113,22 @@ function Signup() {
                     />
                   </div>
 
-                  <h6 class="center">Choose Your Plug</h6>
+                  <h6 className="center">Choose Your Plug</h6>
 
-                  <div class="col s3">
-                    <img src="../../public/images/J1772.png" alt="" class="circle responsive-img"/> 
+                  <div className="col s3">
+                    <img src="../../public/images/J1772.png" alt="" className="circle responsive-img"/> 
                   </div>
 
-                  <div class="col s3">
-                    <img src="../../../public/images/chademo.png" alt="" class="circle responsive-img"/> 
+                  <div className="col s3">
+                    <img src="../../../public/images/chademo.png" alt="" className="circle responsive-img"/> 
                   </div>
 
-                  <div class="col s3">
-                    <img src="../../../public/images/combo.png" alt="" class="circle responsive-img"/> 
+                  <div className="col s3">
+                    <img src="../../../public/images/combo.png" alt="" className="circle responsive-img"/> 
                   </div>
 
-                  <div class="col s3">
-                    <img src="../../../public/images/tesla.png" alt="" class="circle responsive-img"/> 
+                  <div className="col s3">
+                    <img src="../../../public/images/tesla.png" alt="" className="circle responsive-img"/> 
                   </div>
 
                   <div className="chip">
@@ -136,17 +136,17 @@ function Signup() {
                   J1772
                   </div>
 
-                  <div class="chip">
+                  <div className="chip">
                   <img src="" alt=""/>
                   CHADEMO
                   </div>
 
-                  <div class="chip">
+                  <div className="chip">
                   <img src="" alt=""/>
                   NEMA520
                   </div>
 
-                  <div class="chip">
+                  <div className="chip">
                   <img src="" alt=""/>
                   J1772COMBO
                   </div>
