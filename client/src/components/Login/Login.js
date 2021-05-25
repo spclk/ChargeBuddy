@@ -13,7 +13,7 @@ function Login() {
                 <div className="wrapper">
                   <h3>Account</h3>
                   <a className="btn" href="/login">
-                    Sign In
+                    Log In
                   </a>
                   {" "} {/* Adds whitespace between two buttons*/}
                   <a className="btn" href="/signup">
