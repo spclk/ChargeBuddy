@@ -116,19 +116,19 @@ function Signup() {
                   <h6 class="center">Choose Your Plug</h6>
 
                   <div class="col s3">
-                    <img src="type1.png" alt="" class="circle responsive-img"/> 
+                    <img src="../../public/images/J1772.png" alt="" class="circle responsive-img"/> 
                   </div>
 
                   <div class="col s3">
-                    <img src="chademo.png" alt="" class="circle responsive-img"/> 
+                    <img src="../../../public/images/chademo.png" alt="" class="circle responsive-img"/> 
                   </div>
 
                   <div class="col s3">
-                    <img src="combo.png" alt="" class="circle responsive-img"/> 
+                    <img src="../../../public/images/combo.png" alt="" class="circle responsive-img"/> 
                   </div>
 
                   <div class="col s3">
-                    <img src="tesla.png" alt="" class="circle responsive-img"/> 
+                    <img src="../../../public/images/tesla.png" alt="" class="circle responsive-img"/> 
                   </div>
 
                   <div className="chip">
