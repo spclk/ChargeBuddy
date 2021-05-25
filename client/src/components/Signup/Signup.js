@@ -116,39 +116,23 @@ function Signup() {
                   <h6 className="center">Choose Your Plug</h6>
 
                   <div className="col s3">
-                    <img src="../../public/images/J1772.png" alt="" className="circle responsive-img"/> 
+                    <img src="../../../public/images/J1772.png" alt="" className="circle responsive-img"/>
+                    <div className="chip">J1772</div> 
                   </div>
 
                   <div className="col s3">
-                    <img src="../../../public/images/chademo.png" alt="" className="circle responsive-img"/> 
+                    <img src="../../../public/images/chademo.png" alt="" className="circle responsive-img"/>
+                    <div className="chip">CHADEMO</div> 
                   </div>
 
                   <div className="col s3">
-                    <img src="../../../public/images/combo.png" alt="" className="circle responsive-img"/> 
+                    <img src="../../../public/images/combo.png" alt="" className="circle responsive-img"/>
+                    <div className="chip">COMBO</div> 
                   </div>
 
                   <div className="col s3">
-                    <img src="../../../public/images/tesla.png" alt="" className="circle responsive-img"/> 
-                  </div>
-
-                  <div className="chip">
-                  <img src="" alt=""/>
-                  J1772
-                  </div>
-
-                  <div className="chip">
-                  <img src="" alt=""/>
-                  CHADEMO
-                  </div>
-
-                  <div className="chip">
-                  <img src="" alt=""/>
-                  NEMA520
-                  </div>
-
-                  <div className="chip">
-                  <img src="" alt=""/>
-                  J1772COMBO
+                    <img src="../../../public/images/tesla.png" alt="" className="circle responsive-img"/>
+                    <div className="chip">TESLA</div>
                   </div>
 
                   {/* <br/> */}
