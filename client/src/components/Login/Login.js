@@ -12,11 +12,11 @@ function Login() {
               <div className="card-login-splash">
                 <div className="wrapper">
                   <h3>Account</h3>
-                  <a className="btn" href="#!">
+                  <a className="btn" href="/login">
                     Sign In
                   </a>
                   {" "} {/* Adds whitespace between two buttons*/}
-                  <a className="btn" href="#!">
+                  <a className="btn" href="/signup">
                     Register
                   </a>
                 </div>
@@ -37,7 +37,7 @@ function Login() {
                     <input id="password" type="password" className="validate" />
                     <label for="password">Password</label>
                   </div>
-                  <a href="#!">Forgot Password?</a>
+                  <a href="/signup">Don't have an account? Register here!</a>
                   <br />
                   <br />
                   <div>

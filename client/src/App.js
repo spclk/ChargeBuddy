@@ -25,7 +25,6 @@ function App() {
         <Navbar />
           <Route exact path="/login" component={Login}/>
           <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
         <Container />
         <Footer />
       </div>
