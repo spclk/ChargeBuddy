@@ -1,9 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 import "./Login.css";
-import {useHistory} from 'react-router-dom'
 
-function Login(props) {
+function Login() {
+
   const history = useHistory();
+
+  // initial state set to empty strings
+  const [details, setDetails] = useState({
+    email: "",
+    password: "",
+  });
+
+  // gathering data from forms
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setDetails({
+      ...details,
+      [name]: value,
+    });
+  };
+
+  // adding data to the database
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const loggedIN = await axios.get("/api/user", user);
+
+    // redirecting user to home page
+    if (newUser.data) {
+      history.push("/home");
+    }
+  };
+
   return (
     <main>
       <div className="container"> {/* without this container, card would take up the whole page */}
