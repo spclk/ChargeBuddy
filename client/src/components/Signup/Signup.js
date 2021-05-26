@@ -20,7 +20,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-        document.location.replace("/profile");
+        // if successful redirect user to container page
+        // document.location.replace("/container");
       }
     } else {
       alert(response.statusText);
