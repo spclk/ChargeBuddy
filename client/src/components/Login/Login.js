@@ -1,32 +1,10 @@
 import React from "react";
 import "./Login.css";
+import {useHistory} from 'react-router-dom'
 
 
-const loginFormHandler = async (event) => {
-  event.preventDefault();
-
-  // Collect values from the login form
-  const email = document.querySelector("#username").value.trim();
-  const password = document.querySelector("#password").value.trim();
-
-  if (email && password) {
-    // Send a POST request to the API endpoint
-    const response = await fetch("/api/user", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
-
-    if (response.ok) {
-      // If successful, redirect to container page
-      // document.location.reload();
-    } else {
-      alert(response.statusText);
-    }
-  }
-};
-
-function Login() {
+function Login(props) {
+  const history = useHistory();
   return (
     <main>
       <div className="container"> {/* without this container, card would take up the whole page */}

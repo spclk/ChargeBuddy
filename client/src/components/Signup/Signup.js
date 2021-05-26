@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Signup.css";
 import axios from "axios";
 
-function Signup() {
+const Signup = () => {
+  const history = useHistory();
   // initial state set to empty strings
   const [details, setDetails] = useState({
     firstName: "",
@@ -14,9 +15,8 @@ function Signup() {
     password: "",
     make: "",
     model: "",
+    evPort: ""
   });
-
-  let history = useHistory();
 
   // gathering data from forms
   const handleInputChange = (event) => {
@@ -46,6 +46,7 @@ function Signup() {
       ],
     };
     const newUser = await axios.post("/api/user", user);
+
     
     // redirecting user to another page
     if (newUser.data) {
@@ -174,42 +175,43 @@ function Signup() {
                   </div>
 
                   <h6 className="center">Choose Your Plug</h6>
+                  
+                    <div className="col s3"
+                    onClick={(e) => setDetails({...details, evPort: "J1772"})}>
+                      <img
+                        src="./images/J1772.png"
+                        alt=""
+                        className="circle responsive-img"
+                      />
+                      <div className="chip">J1772</div>
+                    </div>
 
-                  <div className="col s3">
-                    <img
-                      src="./images/J1772.png"
-                      alt=""
-                      className="circle responsive-img"
-                    />
-                    <div className="chip">J1772</div>
-                  </div>
+                    <div className="col s3" onClick={(e) => setDetails({...details, evPort: "CHADEMO"})}>
+                      <img
+                        src="./images/chademo.png"
+                        alt=""
+                        className="circle responsive-img"
+                      />
+                      <div className="chip">CHADEMO</div>
+                    </div>
 
-                  <div className="col s3">
-                    <img
-                      src="./images/chademo.png"
-                      alt=""
-                      className="circle responsive-img"
-                    />
-                    <div className="chip">CHADEMO</div>
-                  </div>
+                    <div className="col s3" onClick={(e) => setDetails({...details, evPort: "COMBO"})}>
+                      <img
+                        src="./images/combo.png"
+                        alt=""
+                        className="circle responsive-img"
+                      />
+                      <div className="chip">COMBO</div>
+                    </div>
 
-                  <div className="col s3">
-                    <img
-                      src="./images/combo.png"
-                      alt=""
-                      className="circle responsive-img"
-                    />
-                    <div className="chip">COMBO</div>
-                  </div>
-
-                  <div className="col s3">
-                    <img
-                      src="./images/tesla.png"
-                      alt=""
-                      className="circle responsive-img"
-                    />
-                    <div className="chip">TESLA</div>
-                  </div>
+                    <div className="col s3" onClick={(e) => setDetails({...details, evPort: "TESLA"})}>
+                      <img
+                        src="./images/tesla.png"
+                        alt=""
+                        className="circle responsive-img"
+                      />
+                      <div className="chip">TESLA</div>
+                    </div>
 
                   {/* <br/> */}
                   <p>
