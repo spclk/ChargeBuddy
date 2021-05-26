@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import {Redirect} from "react-router-dom"
+import { Redirect, useHistory } from "react-router-dom";
 import "./Signup.css";
+import axios from "axios";
 
 function Signup() {
-
+  // initial state set to empty strings
   const [details, setDetails] = useState({
     firstName: "",
     lastName: "",
@@ -12,24 +13,54 @@ function Signup() {
     password: "",
     password: "",
     make: "",
-    model: ""
-  })
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    setDetails({
-      ...details, 
-      [name]: value
+    model: "",
   });
 
-  
+  let history = useHistory();
+
+  // gathering data from forms
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setDetails({
+      ...details,
+      [name]: value,
+    });
+  };
+
+  // adding data to the database
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const user = {
+      first_name: details.firstName,
+      last_name: details.lastName,
+      zip_code: details.zip,
+      email: details.email,
+      password: details.password,
+      car: [
+        {
+          make: details.make,
+          model: details.model,
+          year: 2020,
+          evPort: "J1772",
+        },
+      ],
+    };
+    const newUser = await axios.post("/api/user", user);
+    
+    // redirecting user to another page
+    if (newUser.data) {
+      console.log("redirect");
+      history.push("/login");
+    }
+  };
+
   return (
     <main>
       <div className="container">
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
-              {/* left side content */}
+              {/* left side content of Signup form*/}
               <div className="card-content">
                 <form
                   method="post"
@@ -52,6 +83,7 @@ function Signup() {
                       name="firstName"
                       id="FirstName"
                       autofocus
+                      onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
@@ -61,6 +93,7 @@ function Signup() {
                       type="text"
                       name="lastName"
                       id="LastName"
+                      onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
@@ -70,6 +103,7 @@ function Signup() {
                       type="text"
                       name="zip"
                       id="ZipCode"
+                      onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
@@ -77,13 +111,14 @@ function Signup() {
                     <label for="Email">Email</label>
                     <input
                       type="email"
-                      name="customer[email]"
+                      name="email"
                       id="Email"
                       className=""
-                      value=""
+                      value={details.email}
                       spellcheck="false"
                       autocomplete="off"
                       autocapitalize="off"
+                      onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
@@ -94,18 +129,20 @@ function Signup() {
                       name="password"
                       id="CreatePassword"
                       className=""
+                      onChange={(e) => handleInputChange(e)}
                     />
                   </div>
                 </form>
               </div>
 
-              {/* right side content */}
+              {/* right side content of Signup form*/}
               <div className="card-content">
                 <form
                   method="post"
                   action="/account"
                   id="create_customer"
                   accept-charset="UTF-8"
+                  onSubmit={(e) => handleFormSubmit(e)}
                 >
                   <input
                     type="hidden"
@@ -122,6 +159,7 @@ function Signup() {
                       name="make"
                       id="Make"
                       autofocus
+                      onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
@@ -131,28 +169,45 @@ function Signup() {
                       type="text"
                       name="model"
                       id="Model"
+                      onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <h6 className="center">Choose Your Plug</h6>
 
                   <div className="col s3">
-                    <img src="./images/J1772.png" alt="" className="circle responsive-img"/>
-                    <div className="chip">J1772</div> 
+                    <img
+                      src="./images/J1772.png"
+                      alt=""
+                      className="circle responsive-img"
+                    />
+                    <div className="chip">J1772</div>
                   </div>
 
                   <div className="col s3">
-                    <img src="./images/chademo.png" alt="" className="circle responsive-img"/>
-                    <div className="chip">CHADEMO</div> 
+                    <img
+                      src="./images/chademo.png"
+                      alt=""
+                      className="circle responsive-img"
+                    />
+                    <div className="chip">CHADEMO</div>
                   </div>
 
                   <div className="col s3">
-                    <img src="./images/combo.png" alt="" className="circle responsive-img"/>
-                    <div className="chip">COMBO</div> 
+                    <img
+                      src="./images/combo.png"
+                      alt=""
+                      className="circle responsive-img"
+                    />
+                    <div className="chip">COMBO</div>
                   </div>
 
                   <div className="col s3">
-                    <img src="./images/tesla.png" alt="" className="circle responsive-img"/>
+                    <img
+                      src="./images/tesla.png"
+                      alt=""
+                      className="circle responsive-img"
+                    />
                     <div className="chip">TESLA</div>
                   </div>
 
@@ -164,7 +219,7 @@ function Signup() {
                       className="btn-large z-depth-0"
                     />
                   </p>
-                  <br/>
+                  <br />
                   <a href="/login">Already registered? Login here!</a>
                 </form>
               </div>
@@ -175,6 +230,6 @@ function Signup() {
       </div>
     </main>
   );
-  }
+}
 
 export default Signup;
