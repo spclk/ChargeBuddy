@@ -1,10 +1,12 @@
 import React from "react";
-import "./style.css";
+import "./Login.css";
+import {useHistory} from 'react-router-dom'
 
-function Login() {
+function Login(props) {
+  const history = useHistory();
   return (
     <main>
-      <div className="container"> {/* without this container card would take up the whole page */}
+      <div className="container"> {/* without this container, card would take up the whole page */}
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
@@ -12,11 +14,11 @@ function Login() {
               <div className="card-login-splash">
                 <div className="wrapper">
                   <h3>Account</h3>
-                  <a className="btn" href="#!">
-                    Sign In
+                  <a className="btn" href="/login">
+                    Log In
                   </a>
                   {" "} {/* Adds whitespace between two buttons*/}
-                  <a className="btn" href="#!">
+                  <a className="btn" href="/signup">
                     Register
                   </a>
                 </div>
@@ -37,7 +39,7 @@ function Login() {
                     <input id="password" type="password" className="validate" />
                     <label for="password">Password</label>
                   </div>
-                  <a href="#!">Forgot Password?</a>
+                  <a href="/signup">Don't have an account? Register here!</a>
                   <br />
                   <br />
                   <div>
