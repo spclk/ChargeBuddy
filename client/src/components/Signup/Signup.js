@@ -1,34 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import {Redirect} from "react-router-dom"
 import "./Signup.css";
 
-const signupFormHandler = async (event) => {
-  event.preventDefault();
-
-  const firstName = document.querySelector("#FirstName").value.trim();
-  const lastName = document.querySelector("#LastName").value.trim();
-  const zip = document.querySelector("#ZipCode").value.trim();
-  const email = document.querySelector("#Email").value.trim();
-  const password = document.querySelector("#CreatePassword").value.trim();
-  const make = document.querySelector("#Make").value.trim();
-  const model = document.querySelector("#Model").value.trim();
-  // const plugType = document.querySelector("#Plug").value.trim();
-  if (firstName && lastName && zip && email && password && make && model) {
-    const response = await fetch("/api/user", {
-      method: "POST",
-      body: JSON.stringify({ firstName, lastName, zip, email, password, make, model, }),
-      headers: { "Content-Type": "application/json" },
-    });
-
-    if (response.ok) {
-        // if successful redirect user to container page
-        // document.location.replace("/container");
-      }
-    } else {
-      alert(response.statusText);
-    }
-};
-
 function Signup() {
+
+  const [details, setDetails] = useState({
+    firstName: "",
+    lastName: "",
+    zip: "",
+    email: "",
+    password: "",
+    password: "",
+    make: "",
+    model: ""
+  })
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    setDetails({
+      ...details, 
+      [name]: value
+  });
+
+  
   return (
     <main>
       <div className="container">
@@ -55,7 +49,7 @@ function Signup() {
                     <label for="FirstName">First Name</label>
                     <input
                       type="text"
-                      name="customer[first_name]"
+                      name="firstName"
                       id="FirstName"
                       autofocus
                     />
@@ -65,7 +59,7 @@ function Signup() {
                     <label for="LastName">Last Name</label>
                     <input
                       type="text"
-                      name="customer[last_name]"
+                      name="lastName"
                       id="LastName"
                     />
                   </div>
@@ -74,7 +68,7 @@ function Signup() {
                     <label for="ZipCode">Zip Code</label>
                     <input
                       type="text"
-                      name="customer[ZipCode]"
+                      name="zip"
                       id="ZipCode"
                     />
                   </div>
@@ -97,7 +91,7 @@ function Signup() {
                     <label for="CreatePassword">Create a Password</label>
                     <input
                       type="password"
-                      name="customer[password]"
+                      name="password"
                       id="CreatePassword"
                       className=""
                     />
@@ -125,7 +119,7 @@ function Signup() {
                     <label for="Make">Make</label>
                     <input
                       type="text"
-                      name="customer[make]"
+                      name="make"
                       id="Make"
                       autofocus
                     />
@@ -135,7 +129,7 @@ function Signup() {
                     <label for="Model">Model</label>
                     <input
                       type="text"
-                      name="customer[model]"
+                      name="model"
                       id="Model"
                     />
                   </div>
@@ -143,22 +137,22 @@ function Signup() {
                   <h6 className="center">Choose Your Plug</h6>
 
                   <div className="col s3">
-                    <img src="../../../public/images/J1772.png" alt="" className="circle responsive-img"/>
+                    <img src="./images/J1772.png" alt="" className="circle responsive-img"/>
                     <div className="chip">J1772</div> 
                   </div>
 
                   <div className="col s3">
-                    <img src="../../../public/images/chademo.png" alt="" className="circle responsive-img"/>
+                    <img src="./images/chademo.png" alt="" className="circle responsive-img"/>
                     <div className="chip">CHADEMO</div> 
                   </div>
 
                   <div className="col s3">
-                    <img src="../../../public/images/combo.png" alt="" className="circle responsive-img"/>
+                    <img src="./images/combo.png" alt="" className="circle responsive-img"/>
                     <div className="chip">COMBO</div> 
                   </div>
 
                   <div className="col s3">
-                    <img src="../../../public/images/tesla.png" alt="" className="circle responsive-img"/>
+                    <img src="./images/tesla.png" alt="" className="circle responsive-img"/>
                     <div className="chip">TESLA</div>
                   </div>
 
@@ -181,6 +175,6 @@ function Signup() {
       </div>
     </main>
   );
-}
+  }
 
 export default Signup;
