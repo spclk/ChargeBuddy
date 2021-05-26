@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import M from 'materialize-css/dist/js/materialize.min.js';
 // importing Components
 import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup";
 import Navbar from "./components/Navbar/Navbar";
-import Container from './components/Container';
+import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer"
 
 
@@ -22,6 +23,8 @@ function App() {
     <Router>
       <div>
         <Navbar />
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
         <Container />
         <Footer />
