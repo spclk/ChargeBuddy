@@ -38,6 +38,25 @@ const userSchema = new Schema(
     },
   }
 );
+    
+    car: {
+        type: Array,
+        default: []
+    }
+
+
+
+
+
+
+
+
+},
+    {
+        toJson: {
+            virtuals: true
+        }
+    });
 
 const User = mongoose.model("User", userSchema);
 
