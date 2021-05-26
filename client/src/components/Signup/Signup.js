@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import "./Signup.css";
 import axios from "axios";
+import "./Signup.css";
 
 const Signup = () => {
+
   const history = useHistory();
+
   // initial state set to empty strings
   const [details, setDetails] = useState({
     firstName: "",
@@ -12,9 +14,9 @@ const Signup = () => {
     zip: "",
     email: "",
     password: "",
-    password: "",
     make: "",
     model: "",
+    year: "",
     evPort: ""
   });
 
@@ -40,17 +42,15 @@ const Signup = () => {
         {
           make: details.make,
           model: details.model,
-          year: 2020,
-          evPort: "J1772",
+          year: this.year,
+          evPort: details.evPort,
         },
       ],
     };
     const newUser = await axios.post("/api/user", user);
 
-    
-    // redirecting user to another page
+    // redirecting user to home page
     if (newUser.data) {
-      console.log("redirect");
       history.push("/home");
     }
   };
@@ -174,10 +174,20 @@ const Signup = () => {
                     />
                   </div>
 
+                  <div className="input-field">
+                    <label for="Model">Year</label>
+                    <input
+                      type="text"
+                      name="year"
+                      id="Year"
+                      onChange={(e) => handleInputChange(e)}
+                    />
+                  </div>
+
                   <h6 className="center">Choose Your Plug</h6>
                   
                     <div className="col s3"
-                    onClick={(e) => setDetails({...details, evPort: "J1772"})}>
+                    onClick={(event) => setDetails({...details, evPort: "J1772"})}>
                       <img
                         src="./images/J1772.png"
                         alt=""
@@ -186,7 +196,7 @@ const Signup = () => {
                       <div className="chip">J1772</div>
                     </div>
 
-                    <div className="col s3" onClick={(e) => setDetails({...details, evPort: "CHADEMO"})}>
+                    <div className="col s3" onClick={(event) => setDetails({...details, evPort: "CHADEMO"})}>
                       <img
                         src="./images/chademo.png"
                         alt=""
@@ -195,7 +205,7 @@ const Signup = () => {
                       <div className="chip">CHADEMO</div>
                     </div>
 
-                    <div className="col s3" onClick={(e) => setDetails({...details, evPort: "COMBO"})}>
+                    <div className="col s3" onClick={(event) => setDetails({...details, evPort: "COMBO"})}>
                       <img
                         src="./images/combo.png"
                         alt=""
@@ -204,7 +214,7 @@ const Signup = () => {
                       <div className="chip">COMBO</div>
                     </div>
 
-                    <div className="col s3" onClick={(e) => setDetails({...details, evPort: "TESLA"})}>
+                    <div className="col s3" onClick={(event) => setDetails({...details, evPort: "TESLA"})}>
                       <img
                         src="./images/tesla.png"
                         alt=""
@@ -213,16 +223,16 @@ const Signup = () => {
                       <div className="chip">TESLA</div>
                     </div>
 
-                  {/* <br/> */}
+                  <br/>
                   <p>
                     <input
                       type="submit"
                       value="Register"
                       className="btn-large z-depth-0"
                     />
+                  
+                    <a href="/login"> {""}Already registered? Login here!</a>
                   </p>
-                  <br />
-                  <a href="/login">Already registered? Login here!</a>
                 </form>
               </div>
               {/* right side content ends here */}
