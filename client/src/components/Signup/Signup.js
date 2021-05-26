@@ -1,6 +1,32 @@
 import React from "react";
 import "./Signup.css";
 
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const firstName = document.querySelector("#FirstName").value.trim();
+  const lastName = document.querySelector("#LastName").value.trim();
+  const zip = document.querySelector("#ZipCode").value.trim();
+  const email = document.querySelector("#Email").value.trim();
+  const password = document.querySelector("#CreatePassword").value.trim();
+  const make = document.querySelector("#Make").value.trim();
+  const model = document.querySelector("#Model").value.trim();
+  // const plugType = document.querySelector("#Plug").value.trim();
+  if (firstName && lastName && zip && email && password && make && model) {
+    const response = await fetch("/api/user", {
+      method: "POST",
+      body: JSON.stringify({ firstName, lastName, zip, email, password, make, model, }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+        document.location.replace("/profile");
+      }
+    } else {
+      alert(response.statusText);
+    }
+};
+
 function Signup() {
   return (
     <main>
