@@ -61,21 +61,22 @@ function Login() {
                 <span className="card-title">Log In</span>
                 <form>
                   <div className="input-field">
-                    <input id="username" type="text" className="validate" />
+                    <input id="username" type="text" className="validate" 
+                    onChange={(e) => handleInputChange(e)}/>
                     <label for="username">Email</label>
                   </div>
                   <div className="input-field">
-                    <input id="password" type="password" className="validate" />
+                    <input id="password" type="password" className="validate" 
+                    onChange={(e) => handleInputChange(e)}/>
                     <label for="password">Password</label>
                   </div>
                   <a href="/signup">Don't have an account? Register here!</a>
                   <br />
                   <br />
                   <div>
-                    <input className="btn right" type="submit" value="Log In" />
-                    <a href="/container" className="btn-flat">
-                      Back
-                    </a>
+                    <input className="btn right" type="submit" value="Log In" 
+                    onClick={(event) => handleFormSubmit}/>
+                    <a href="/container" className="btn-flat">Back</a>
                   </div>
                 </form>
               </div>
