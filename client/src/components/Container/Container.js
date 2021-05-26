@@ -2,6 +2,7 @@ import React from 'react';
 import "./style.css";
 import { Component } from 'react';
 import API from '../../utils/API';
+import {Link} from "react-router-dom";
 
 
 
@@ -41,7 +42,8 @@ class Container extends Component {
     render() {
         return (
             <div>
-                <h1>hello</h1>
+                <Link to="/home"><h1>hello</h1></Link>
+                
             </div>
         )
     }
