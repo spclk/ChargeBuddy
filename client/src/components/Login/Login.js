@@ -2,7 +2,6 @@ import React from "react";
 import "./Login.css";
 import {useHistory} from 'react-router-dom'
 
-
 function Login(props) {
   const history = useHistory();
   return (

@@ -10,7 +10,6 @@ import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 
-
 function App() {
 
   // do not remove 
@@ -26,7 +25,6 @@ function App() {
           <Switch>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/login" component={Login} />
             <Route exact path="/home" component={Home} />
           </Switch>
         <Container />
@@ -34,7 +32,5 @@ function App() {
     </Router>
   )
 }
-
-
 
 export default App;

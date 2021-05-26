@@ -51,7 +51,7 @@ const Signup = () => {
     // redirecting user to another page
     if (newUser.data) {
       console.log("redirect");
-      history.push("/login");
+      history.push("/home");
     }
   };
 
