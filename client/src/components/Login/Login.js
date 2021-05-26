@@ -25,10 +25,10 @@ function Login() {
   // adding data to the database
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const loggedIN = await axios.get("/api/user", user);
+    const loggedIN = await axios.get("/api/user");
 
     // redirecting user to home page
-    if (newUser.data) {
+    if (loggedIN.data) {
       history.push("/home");
     }
   };
@@ -39,10 +39,10 @@ function Login() {
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
-              {/* left side content */}
-              <div className="card-login-splash">
+              {/* left side content begins here*/}
+              <div className="center-align card-login-splash">
                 <div className="wrapper">
-                  <h3>Account</h3>
+                  <h3 className="">Account</h3>
                   <a className="btn" href="/login">
                     Log In
                   </a>
@@ -51,12 +51,12 @@ function Login() {
                     Register
                   </a>
                 </div>
-                <img
-                  src="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/geometric-cave.jpg?v=13127282243134125143"
+                <img className="responsive-img"
+                  src="./images/charger.jpeg"
                   alt=""
                 />
               </div>
-              {/* right side content */}
+              {/* right side content begins here*/}
               <div className="card-content">
                 <span className="card-title">Log In</span>
                 <form>
@@ -73,7 +73,7 @@ function Login() {
                   <br />
                   <div>
                     <input className="btn right" type="submit" value="Log In" />
-                    <a href="#!" className="btn-flat">
+                    <a href="/container" className="btn-flat">
                       Back
                     </a>
                   </div>
