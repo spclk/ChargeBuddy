@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "../Home/Home";
-import Mycar from "../MyCar/MyCar";
+import Account from "../Account/Account";
 import { useHistory } from "react-router-dom";
 import { Redirect } from "react-router";
 
@@ -43,7 +43,7 @@ const Footer = (props) => {
           <li className="tab" onClick={handleCarClick}>
             <a href="/mycar">
               <i className="material-icons">
-                directions_car <p className="footerFont">MY CAR</p>
+                directions_car <p className="footerFont">My Acount</p>
               </i>
             </a>
           </li>
