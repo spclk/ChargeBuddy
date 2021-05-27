@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // importing Materialize.css
 import M from 'materialize-css/dist/js/materialize.min.js';
@@ -10,6 +10,7 @@ import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer";
 import Account from './components/Account/Account';
 import LandingPage from "./components/LandingPage/LandingPage";
+import { set } from "mongoose";
 
 
 function App() {
@@ -20,13 +21,18 @@ function App() {
     M.AutoInit();
   }, []);
 
+  const [user, setUser] = useState()
+
   return (
     // Router is needed to navigate between pages/components
     <Router>
         <Navbar />
           <Switch>
             <Route exact path="/login" component={Login}/>
-            <Route exact path="/signup" component={Signup} />
+            {/* <Route exact path="/signup" component={Signup} /> */}
+            <Route exact path="/signup" >
+              <Signup setUser={setUser} />
+            </Route>
             <Route exact path="/landing" component={LandingPage} />
             <Route exact path="/account" component={Account} />
           </Switch>

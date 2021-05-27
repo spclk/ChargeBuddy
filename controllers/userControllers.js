@@ -19,6 +19,7 @@ module.exports = {
     console.log(req.body.email)
     db.User.findOne({ where: { email: req.body.email } }).then(dbData => {
       console.log(dbData)
+      res.json(dbData)
     })
     // db.User
     //   .findById("60aee067c94ae514f63a3c49")

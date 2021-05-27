@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Signup.css";
 
-const Signup = () => {
+const Signup = (props) => {
 
   const history = useHistory();
 
@@ -48,10 +48,10 @@ const Signup = () => {
       ],
     };
     const newUser = await axios.post("/api/user", user);
-
+    props.setUser(newUser)
     // redirecting user to home page
     if (newUser.data) {
-      history.push("/home");
+      history.push("/account");
     }
   };
 
@@ -186,7 +186,7 @@ const Signup = () => {
 
                   <h6 className="center">Choose Your Plug</h6>
 
-                  <div className="col s3"
+                  <div className="col s3" 
                     onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
                     <img
                       src="./images/J1772.png"

@@ -26,7 +26,7 @@ function Login() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     //hit the server with a post request containing the email and password
-    const loggedIN = await axios.get("/api/user");
+    const loggedIN = await axios.post("/api/user/login", details);
     console.log(loggedIN)
     // redirecting user to home page
     // if (loggedIN.data) {
@@ -60,7 +60,7 @@ function Login() {
               {/* right side content begins here*/}
               <div className="card-content">
                 <span className="card-title">Log In</span>
-                <form>
+                <form onSubmit={(event) => handleFormSubmit(event)} >
                   <div className="input-field">
                     <input name="email" id="username" type="text" className="validate"
                       onChange={(e) => handleInputChange(e)} />
@@ -76,7 +76,7 @@ function Login() {
                   <br />
                   <div>
                     <input className="btn right" type="submit" value="Log In"
-                      onClick={(event) => handleFormSubmit} />
+                      />
                     <a href="/container" className="btn-flat">Back</a>
                   </div>
                 </form>
