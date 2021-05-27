@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const Footer = (props) => {
   const history = useHistory();
-  const handleClickHome = () => {
+  const handleClickLanding = () => {
     history.push("/landing");
   };
   const handleMapClick = () => {
@@ -18,7 +18,7 @@ const Footer = (props) => {
     <footer className="page-footer card-content valign center ">
       <div className="nav-content container">
         <ul className="tabs tabs-transparent">
-          <li className="tab " onClick={handleClickHome}>
+          <li className="tab " onClick={handleClickLanding}>
             <a href="#">
               <i className="material-icons darken">
                 home <p className="footerFont">HOME</p>
