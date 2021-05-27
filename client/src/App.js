@@ -9,6 +9,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
+import MyCar from './components/MyCar/MyCar';
+
 
 function App() {
 
@@ -26,6 +28,7 @@ function App() {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/mycar" component={MyCar} />
           </Switch>
         <Container />
         <Footer /> 
