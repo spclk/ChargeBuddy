@@ -1,10 +1,8 @@
 import React from "react";
-import Home from "../Home/Home";
 import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router";
 
 const Footer = (props) => {
-  let history = useHistory();
+  const history = useHistory();
   const handleClickHome = () => {
     history.push("/home");
   };
@@ -19,7 +17,7 @@ const Footer = (props) => {
       <div className="nav-content container">
         <ul className="tabs tabs-transparent">
           <li className="tab " onClick={handleClickHome}>
-            <a href="">
+            <a href="#">
               <i className="material-icons darken">
                 home <p className="footerFont">HOME</p>
               </i>
