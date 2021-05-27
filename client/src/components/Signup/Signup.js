@@ -42,7 +42,7 @@ const Signup = () => {
         {
           make: details.make,
           model: details.model,
-          year: this.year,
+          year: details.year,
           evPort: details.evPort,
         },
       ],
@@ -185,52 +185,52 @@ const Signup = () => {
                   </div>
 
                   <h6 className="center">Choose Your Plug</h6>
-                  
-                    <div className="col s3"
-                    onClick={(event) => setDetails({...details, evPort: "J1772"})}>
-                      <img
-                        src="./images/J1772.png"
-                        alt=""
-                        className="circle responsive-img"
-                      />
-                      <div className="chip">J1772</div>
-                    </div>
 
-                    <div className="col s3" onClick={(event) => setDetails({...details, evPort: "CHADEMO"})}>
-                      <img
-                        src="./images/chademo.png"
-                        alt=""
-                        className="circle responsive-img"
-                      />
-                      <div className="chip">CHADEMO</div>
-                    </div>
+                  <div className="col s3"
+                    onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
+                    <img
+                      src="./images/J1772.png"
+                      alt=""
+                      className="circle responsive-img"
+                    />
+                    <div className="chip">J1772</div>
+                  </div>
 
-                    <div className="col s3" onClick={(event) => setDetails({...details, evPort: "COMBO"})}>
-                      <img
-                        src="./images/combo.png"
-                        alt=""
-                        className="circle responsive-img"
-                      />
-                      <div className="chip">COMBO</div>
-                    </div>
+                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
+                    <img
+                      src="./images/chademo.png"
+                      alt=""
+                      className="circle responsive-img"
+                    />
+                    <div className="chip">CHADEMO</div>
+                  </div>
 
-                    <div className="col s3" onClick={(event) => setDetails({...details, evPort: "TESLA"})}>
-                      <img
-                        src="./images/tesla.png"
-                        alt=""
-                        className="circle responsive-img"
-                      />
-                      <div className="chip">TESLA</div>
-                    </div>
+                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
+                    <img
+                      src="./images/combo.png"
+                      alt=""
+                      className="circle responsive-img"
+                    />
+                    <div className="chip">COMBO</div>
+                  </div>
 
-                  <br/>
+                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
+                    <img
+                      src="./images/tesla.png"
+                      alt=""
+                      className="circle responsive-img"
+                    />
+                    <div className="chip">TESLA</div>
+                  </div>
+
+                  <br />
                   <p>
                     <input
                       type="submit"
                       value="Register"
                       className="btn-large z-depth-0"
                     />
-                  
+
                     <a href="/login"> {""}Already registered? Login here!</a>
                   </p>
                 </form>
