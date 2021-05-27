@@ -1,12 +1,12 @@
 import React from "react";
-import Home from "../Home/Home";
+import Home from "../LandingPage/LandingPage";
 import Mycar from "../MyCar/MyCar";
 import { useHistory } from "react-router-dom";
 
 const Footer = (props) => {
   const history = useHistory();
   const handleClickHome = () => {
-    history.push("/home");
+    history.push("/landing");
   };
   const handleMapClick = () => {
     history.push("/map");
