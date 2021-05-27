@@ -1,6 +1,4 @@
 import React from "react";
-import Home from "../LandingPage/LandingPage";
-import Mycar from "../MyCar/MyCar";
 import { useHistory } from "react-router-dom";
 
 const Footer = (props) => {
@@ -12,7 +10,7 @@ const Footer = (props) => {
     history.push("/map");
   };
   const handleCarClick = () => {
-    history.push("/mycar");
+    history.push("/account");
   };
   return (
     <footer className="page-footer card-content valign center ">
@@ -42,7 +40,7 @@ const Footer = (props) => {
           <li className="tab" onClick={handleCarClick}>
             <a href="/mycar">
               <i className="material-icons">
-                directions_car <p className="footerFont">MY CAR</p>
+                directions_car <p className="footerFont">ACCOUNT</p>
               </i>
             </a>
           </li>

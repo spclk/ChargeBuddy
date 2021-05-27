@@ -8,8 +8,8 @@ import Signup from "./components/Signup/Signup";
 import Navbar from "./components/Navbar/Navbar";
 import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer";
+import Account from './components/Account/Account';
 import LandingPage from "./components/LandingPage/LandingPage";
-import MyCar from './components/MyCar/MyCar';
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/landing" component={LandingPage} />
-            <Route exact path="/mycar" component={MyCar} />
+            <Route exact path="/account" component={Account} />
           </Switch>
         <Container />
         <Footer /> 

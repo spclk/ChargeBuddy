@@ -1,6 +1,6 @@
 import React from "react";
 
-const Mycar = () => {
+const Account = () => {
   return (
     <div>
       <h1>My car information</h1>
@@ -8,4 +8,4 @@ const Mycar = () => {
   );
 };
 
-export default Mycar;
+export default Account;
