@@ -15,21 +15,19 @@ import { set } from "mongoose";
 
 function App() {
 
-  // do not remove 
   // useEffect is needed for Materialize JavaScript elements to work
   useEffect(() => {
     M.AutoInit();
   }, []);
 
+  // Data to keep user logged in 
   const [user, setUser] = useState()
 
   return (
-    // Router is needed to navigate between pages/components
     <Router>
         <Navbar />
           <Switch>
             <Route exact path="/login" component={Login}/>
-            {/* <Route exact path="/signup" component={Signup} /> */}
             <Route exact path="/signup" >
               <Signup setUser={setUser} />
             </Route>

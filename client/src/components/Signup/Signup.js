@@ -49,7 +49,7 @@ const Signup = (props) => {
     };
     const newUser = await axios.post("/api/user", user);
     props.setUser(newUser)
-    // redirecting user to home page
+    // redirecting user to account page
     if (newUser.data) {
       history.push("/account");
     }
@@ -230,7 +230,6 @@ const Signup = (props) => {
                       value="Register"
                       className="btn-large z-depth-0"
                     />
-
                     <a href="/login"> {""}Already registered? Login here!</a>
                   </p>
                 </form>

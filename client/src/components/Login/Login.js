@@ -22,15 +22,15 @@ function Login() {
     });
   };
 
-  // adding data to the database
+  // logging user in
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     //hit the server with a post request containing the email and password
     const loggedIN = await axios.post("/api/user/login", details);
     console.log(loggedIN)
-    // redirecting user to home page
+    // redirecting user to account page
     // if (loggedIN.data) {
-    //   history.push("/home");
+    //   history.push("/account");
     // }
   };
 
