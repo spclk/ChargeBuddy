@@ -70,9 +70,11 @@ const Account = () => {
           </div>
         </div>
       </main>
-      <p>Now that you're part of the ChargeBuddy community, 
-        start pluggin in prices and tips</p>
-      <a className="waves-effect waves-light btn-large">MAP</a>
+      <div className="center-align">
+      <p>Now that you're part of the ChargeBuddy community, </p>
+      <p>start adding prices and tips on the Map page</p>
+      <a className="waves-effect waves-light btn-large">GO TO MAP</a>
+      </div>
       <h1>My car information</h1>
     </div>
   );
