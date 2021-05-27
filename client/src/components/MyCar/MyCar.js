@@ -1,9 +1,11 @@
 import React from "react";
 
-const MyCar = () => {
-    return ( <div>
-        {console.log()}
-        </div> );
-}
- 
-export default MyCar;
+const Mycar = () => {
+  return (
+    <div>
+      <h1>My car information</h1>
+    </div>
+  );
+};
+
+export default Mycar;

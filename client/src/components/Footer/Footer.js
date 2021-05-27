@@ -1,4 +1,9 @@
 import React from "react";
+<<<<<<< HEAD
+=======
+import Home from "../Home/Home";
+import Mycar from "../MyCar/MyCar";
+>>>>>>> a850ac62b6684e571159d1c6ac78375f73ce9752
 import { useHistory } from "react-router-dom";
 
 const Footer = (props) => {
