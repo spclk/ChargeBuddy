@@ -3,41 +3,43 @@ const bcrypt = require('bcryptjs')
 
 const Schema = mongoose.Schema;
 
-
-const userSchema = new Schema({
-
-
+const userSchema = new Schema(
+  {
     first_name: {
-        type: String,
-        unique: true,
-
+      type: String,
+      unique: true,
     },
     last_name: {
-        type: String,
-        unique: true,
-
+      type: String,
+      unique: true,
     },
     zip_code: {
-        type: Number,
-        unique: false,
-
+      type: Number,
+      unique: false,
     },
     email: {
-        type: String,
-        unique: true,
-        match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+      type: String,
+      unique: true,
+      match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
     },
     password: {
-        type: String,
-        trim: true,
-        required: "Password is Required",
-        validate: [({ length }) => length >= 8, "Password should be longer."]
+      type: String,
+      trim: true,
+      required: "Password is Required",
+      validate: [({ length }) => length >= 8, "Password should be longer."],
     },
     userCreated: {
-        type: Date,
-        default: Date.now
+      type: Date,
+      default: Date.now,
     },
-
+  },
+  {
+    toJson: {
+      virtuals: true,
+    },
+  }
+);
+    
     car: {
         type: Array,
         default: []
