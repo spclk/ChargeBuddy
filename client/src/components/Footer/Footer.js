@@ -43,7 +43,7 @@ const Footer = (props) => {
           <li className="tab" onClick={handleCarClick}>
             <a href="/mycar">
               <i className="material-icons">
-                directions_car <p className="footerFont">MY CAR</p>
+                directions_car <p className="footerFont">My Acount</p>
               </i>
             </a>
           </li>
