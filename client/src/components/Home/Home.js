@@ -1,8 +1,8 @@
 import React from "react";
 
-const Home = () => {
+const LandingPage = () => {
   return  <img src='./images/EVSwirl.jpg' className= " responsive-img  valign center " alt="Charging" />
   
 };
 
-export default Home;
+export default LandingPage;
