@@ -1,26 +1,23 @@
 import React from "react";
-import Home from "../Home/Home";
-import Account from "../Account/Account";
 import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router";
 
 const Footer = (props) => {
-  let history = useHistory();
-  const handleClickHome = () => {
-    history.push("/home");
+  const history = useHistory();
+  const handleClickLanding = () => {
+    history.push("/landing");
   };
   const handleMapClick = () => {
     history.push("/map");
   };
   const handleCarClick = () => {
-    history.push("/mycar");
+    history.push("/account");
   };
   return (
     <footer className="page-footer card-content valign center ">
       <div className="nav-content container">
         <ul className="tabs tabs-transparent">
-          <li className="tab " onClick={handleClickHome}>
-            <a href="">
+          <li className="tab " onClick={handleClickLanding}>
+            <a href="#">
               <i className="material-icons darken">
                 home <p className="footerFont">HOME</p>
               </i>
@@ -43,7 +40,7 @@ const Footer = (props) => {
           <li className="tab" onClick={handleCarClick}>
             <a href="/mycar">
               <i className="material-icons">
-                directions_car <p className="footerFont">My Acount</p>
+                directions_car <p className="footerFont">ACCOUNT</p>
               </i>
             </a>
           </li>

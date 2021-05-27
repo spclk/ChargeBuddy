@@ -4,7 +4,6 @@ const Account = () => {
   return (
     <div>
       <h1>My car information</h1>
-
     </div>
   );
 };
