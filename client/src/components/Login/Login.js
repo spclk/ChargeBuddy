@@ -25,12 +25,13 @@ function Login() {
   // adding data to the database
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    //hit the server with a post request containing the email and password
     const loggedIN = await axios.get("/api/user");
-
+    console.log(loggedIN)
     // redirecting user to home page
-    if (loggedIN.data) {
-      history.push("/home");
-    }
+    // if (loggedIN.data) {
+    //   history.push("/home");
+    // }
   };
 
   return (
@@ -61,21 +62,21 @@ function Login() {
                 <span className="card-title">Log In</span>
                 <form>
                   <div className="input-field">
-                    <input id="username" type="text" className="validate" 
-                    onChange={(e) => handleInputChange(e)}/>
+                    <input name="email" id="username" type="text" className="validate"
+                      onChange={(e) => handleInputChange(e)} />
                     <label for="username">Email</label>
                   </div>
                   <div className="input-field">
-                    <input id="password" type="password" className="validate" 
-                    onChange={(e) => handleInputChange(e)}/>
+                    <input name="password" id="password" type="password" className="validate"
+                      onChange={(e) => handleInputChange(e)} />
                     <label for="password">Password</label>
                   </div>
                   <a href="/signup">Don't have an account? Register here!</a>
                   <br />
                   <br />
                   <div>
-                    <input className="btn right" type="submit" value="Log In" 
-                    onClick={(event) => handleFormSubmit}/>
+                    <input className="btn right" type="submit" value="Log In"
+                      onClick={(event) => handleFormSubmit} />
                     <a href="/container" className="btn-flat">Back</a>
                   </div>
                 </form>
