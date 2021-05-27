@@ -10,7 +10,6 @@ import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 
-
 function App() {
 
   // do not remove 
@@ -22,7 +21,6 @@ function App() {
   return (
     // Router is needed to navigate between pages/components
     <Router>
-      <div>
         <Navbar />
           <Switch>
             <Route exact path="/login" component={Login}/>
@@ -30,12 +28,9 @@ function App() {
             <Route exact path="/home" component={Home} />
           </Switch>
         <Container />
-        <Footer />
-      </div>
+        <Footer /> 
     </Router>
   )
 }
-
-
 
 export default App;
