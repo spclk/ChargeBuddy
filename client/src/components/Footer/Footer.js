@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "../Home/Home";
-import Mycar from "../MyCar/MyCar";
+import Account from "../Account/Account";
 import { useHistory } from "react-router-dom";
 import { Redirect } from "react-router";
 
