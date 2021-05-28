@@ -2,6 +2,7 @@ import React from 'react';
 import "./style.css";
 import { Component } from 'react';
 import API from '../../utils/API';
+import Map from "../Map/Map"
 
 
 
@@ -42,6 +43,7 @@ class Container extends Component {
         return (
             <div>
                 <h1>hello</h1>
+                <Map />
             </div>
         )
     }
