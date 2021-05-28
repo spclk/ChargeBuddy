@@ -4,46 +4,45 @@ const bcrypt = require('bcryptjs')
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
-  {
-    first_name: {
-      type: String,
-      unique: true,
+    {
+        first_name: {
+            type: String,
+            unique: true,
+        },
+        last_name: {
+            type: String,
+            unique: true,
+        },
+        zip_code: {
+            type: Number,
+            unique: false,
+        },
+        email: {
+            type: String,
+            unique: true,
+            match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
+        },
+        password: {
+            type: String,
+            trim: true,
+            required: "Password is Required",
+            validate: [({ length }) => length >= 8, "Password should be longer."],
+        },
+        userCreated: {
+            type: Date,
+            default: Date.now,
+        },
+        car: {
+            type: Array,
+            default: []
+        }
     },
-    last_name: {
-      type: String,
-      unique: true,
-    },
-    zip_code: {
-      type: Number,
-      unique: false,
-    },
-    email: {
-      type: String,
-      unique: true,
-      match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
-    },
-    password: {
-      type: String,
-      trim: true,
-      required: "Password is Required",
-      validate: [({ length }) => length >= 8, "Password should be longer."],
-    },
-    userCreated: {
-      type: Date,
-      default: Date.now,
-    },
-  },
-  {
-    toJson: {
-      virtuals: true,
-    },
-  }
-);
-    
-    car: {
-        type: Array,
-        default: []
+    {
+        toJson: {
+            virtuals: true,
+        },
     }
+);
 
 
 
@@ -52,7 +51,7 @@ const userSchema = new Schema(
 
 
 
-});
+
 userSchema.pre("save", async function (next) {
     const user = this;
 
