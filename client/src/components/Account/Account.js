@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import {Redirect} from 'react-router-dom';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const Account = ({user}) => {
@@ -6,6 +7,7 @@ const Account = ({user}) => {
     M.AutoInit();
   })
   return (
+    !!user ? 
     <div>
       <main>
         <div className="section container">
@@ -81,6 +83,7 @@ const Account = ({user}) => {
       </div>
       <h1>My car information</h1>
     </div>
+    : <Redirect to="/login"/>
   );
 };
 
