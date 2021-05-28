@@ -10,7 +10,6 @@ import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer";
 import Account from './components/Account/Account';
 import LandingPage from "./components/LandingPage/LandingPage";
-import { set } from "mongoose";
 
 
 function App() {
