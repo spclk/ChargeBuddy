@@ -8,9 +8,18 @@
   padding: 6px 12px;
   font-family: monospace;
   z-index: 1;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   margin: 12px;
   border-radius: 4px;
+}
+
+.mapboxgl-ctrl-attrib-button {
+  display: none;
+}
+
+.btn {
+  margin-left: 12px;
+  margin-bottom: 15px;
 }
