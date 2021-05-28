@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Signup.css";
 
-const Signup = () => {
+const Signup = (props) => {
 
   const history = useHistory();
 
@@ -38,20 +38,19 @@ const Signup = () => {
       zip_code: details.zip,
       email: details.email,
       password: details.password,
-      car: [
+      car: 
         {
           make: details.make,
           model: details.model,
           year: details.year,
           evPort: details.evPort,
         },
-      ],
     };
     const newUser = await axios.post("/api/user", user);
-
-    // redirecting user to home page
+    props.setUser(newUser.data)
+    // redirecting user to account page
     if (newUser.data) {
-      history.push("/home");
+      history.push("/account");
     }
   };
 
@@ -186,7 +185,7 @@ const Signup = () => {
 
                   <h6 className="center">Choose Your Plug</h6>
 
-                  <div className="col s3"
+                  <div className="col s3" 
                     onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
                     <img
                       src="./images/J1772.png"
@@ -230,7 +229,6 @@ const Signup = () => {
                       value="Register"
                       className="btn-large z-depth-0"
                     />
-
                     <a href="/login"> {""}Already registered? Login here!</a>
                   </p>
                 </form>
