@@ -42,7 +42,7 @@ class Container extends Component {
     render() {
         return (
             <div>
-                <Link to="/home"><h1>hello</h1></Link>
+                <Link to="/home"><h5>hello</h5></Link>
                 
             </div>
         )

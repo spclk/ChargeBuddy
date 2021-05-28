@@ -17,9 +17,11 @@ module.exports = {
   },
   findByEmail: function (req, res) {
     console.log(req.body.email)
-    db.User.findOne({ where: { email: req.body.email } }).then(dbData => {
+    db.User.findOne({ email: req.body.email }).then(dbData => {
       console.log(dbData)
+      res.json(dbData)
     })
+    .catch(err=> console.log(err))
     // db.User
     //   .findById("60aedf99af17a014b346b11a")
     //   .then(dbModel => console.log(dbModel))

@@ -10,7 +10,7 @@ const Footer = (props) => {
     history.push("/map");
   };
   const handleCarClick = () => {
-    history.push("/account");
+   props.user ? history.push("/account") : history.push("/login")
   };
   return (
     <footer className="page-footer card-content valign center ">
@@ -38,7 +38,7 @@ const Footer = (props) => {
             </a>
           </li>
           <li className="tab" onClick={handleCarClick}>
-            <a href="/mycar">
+            <a href={props.user ? "/account" : "/login"}>
               <i className="material-icons">
                 directions_car <p className="footerFont">ACCOUNT</p>
               </i>
