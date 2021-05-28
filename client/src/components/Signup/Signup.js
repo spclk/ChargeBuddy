@@ -20,7 +20,7 @@ const Signup = (props) => {
     evPort: ""
   });
 
-  // gathering data from forms
+  // gathering data from htmlForms
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setDetails({
@@ -30,7 +30,7 @@ const Signup = (props) => {
   };
 
   // adding data to the database
-  const handleFormSubmit = async (event) => {
+  const handlehtmlFormSubmit = async (event) => {
     event.preventDefault();
     const user = {
       first_name: details.firstName,
@@ -38,13 +38,13 @@ const Signup = (props) => {
       zip_code: details.zip,
       email: details.email,
       password: details.password,
-      car: 
-        {
-          make: details.make,
-          model: details.model,
-          year: details.year,
-          evPort: details.evPort,
-        },
+      car:
+      {
+        make: details.make,
+        model: details.model,
+        year: details.year,
+        evPort: details.evPort,
+      },
     };
     const newUser = await axios.post("/api/user", user);
     props.setUser(newUser.data)
@@ -60,35 +60,35 @@ const Signup = (props) => {
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
-              {/* left side content of Signup form*/}
+              {/* left side content of Signup htmlForm*/}
               <div className="card-content">
                 <form
                   method="post"
                   action="/account"
                   id="create_customer"
-                  accept-charset="UTF-8"
+                  acceptCharset="UTF-8"
                 >
                   <input
                     type="hidden"
-                    name="form_type"
+                    name="htmlForm_type"
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
                   <h5 className="center">ABOUT YOU</h5>
 
                   <div className="input-field">
-                    <label for="FirstName">First Name</label>
+                    <label htmlFor="FirstName">First Name</label>
                     <input
                       type="text"
                       name="firstName"
                       id="FirstName"
-                      autofocus
+                      autoFocus
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="LastName">Last Name</label>
+                    <label htmlFor="LastName">Last Name</label>
                     <input
                       type="text"
                       name="lastName"
@@ -98,7 +98,7 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="ZipCode">Zip Code</label>
+                    <label htmlFor="ZipCode">Zip Code</label>
                     <input
                       type="text"
                       name="zip"
@@ -108,22 +108,22 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="Email">Email</label>
+                    <label htmlFor="Email">Email</label>
                     <input
                       type="email"
                       name="email"
                       id="Email"
                       className=""
                       value={details.email}
-                      spellcheck="false"
-                      autocomplete="off"
-                      autocapitalize="off"
+                      spellCheck="false"
+                      autoComplete="off"
+                      autoCapitalize="off"
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="CreatePassword">Create a Password</label>
+                    <label htmlFor="CreatePassword">Create a Password</label>
                     <input
                       type="password"
                       name="password"
@@ -135,14 +135,14 @@ const Signup = (props) => {
                 </form>
               </div>
 
-              {/* right side content of Signup form*/}
+              {/* right side content of Signup htmlForm*/}
               <div className="card-content">
                 <form
                   method="post"
                   action="/account"
                   id="create_customer"
-                  accept-charset="UTF-8"
-                  onSubmit={(e) => handleFormSubmit(e)}
+                  acceptCharset="UTF-8"
+                  onSubmit={(e) => handlehtmlFormSubmit(e)}
                 >
                   <input
                     type="hidden"
@@ -153,18 +153,18 @@ const Signup = (props) => {
                   <h5 className="center">ABOUT YOUR VEHICLE</h5>
 
                   <div className="input-field">
-                    <label for="Make">Make</label>
+                    <label htmlFor="Make">Make</label>
                     <input
                       type="text"
                       name="make"
                       id="Make"
-                      autofocus
+                      autoFocus
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="Model">Model</label>
+                    <label htmlFor="Model">Model</label>
                     <input
                       type="text"
                       name="model"
@@ -174,7 +174,7 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="Model">Year</label>
+                    <label htmlFor="Model">Year</label>
                     <input
                       type="text"
                       name="year"
@@ -185,7 +185,7 @@ const Signup = (props) => {
 
                   <h6 className="center">Choose Your Plug</h6>
 
-                  <div className="col s3" 
+                  <div className="col s3"
                     onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
                     <img
                       src="./images/J1772.png"
