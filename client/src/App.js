@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // importing Materialize.css
 import M from 'materialize-css/dist/js/materialize.min.js';
@@ -14,21 +14,28 @@ import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
 
-  // do not remove 
   // useEffect is needed for Materialize JavaScript elements to work
   useEffect(() => {
     M.AutoInit();
   }, []);
 
+  // Data to keep user logged in 
+  const [user, setUser] = useState()
+
   return (
-    // Router is needed to navigate between pages/components
     <Router>
         <Navbar />
           <Switch>
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login">
+              <Login setUser={setUser}/>
+            </Route>
+            <Route exact path="/signup" >
+              <Signup setUser={setUser}/>
+            </Route>
+            <Route exact path="/account" >
+              <Account user={user}/>
+            </Route>
             <Route exact path="/landing" component={LandingPage} />
-            <Route exact path="/account" component={Account} />
           </Switch>
         <Container />
         <Footer /> 
