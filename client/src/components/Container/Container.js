@@ -2,7 +2,6 @@ import React from 'react';
 import "./Container.css";
 import { Component } from 'react';
 import API from '../../utils/API';
-import Map from "../Map/Map"
 import {Link} from "react-router-dom";
 
 
@@ -43,7 +42,7 @@ class Container extends Component {
     render() {
         return (
             <div>
-                <Link to="/home"><h5>hello</h5></Link>
+                {/* <Link to="/home"><h5>hello</h5></Link> */}
                 
             </div>
         )
