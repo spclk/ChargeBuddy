@@ -25,21 +25,21 @@ function App() {
 
   return (
     <Router>
-        <Navbar />
-          <Switch>
-            <Route exact path="/login">
-              <Login setUser={setUser}/>
-            </Route>
-            <Route exact path="/signup" >
-              <Signup setUser={setUser}/>
-            </Route>
-            <Route exact path="/account" >
-              <Account user={user}/>
-            </Route>
-            <Route exact path="/landing" component={LandingPage} />
-          </Switch>
-        <Container />
-        <Footer /> 
+      <Navbar />
+      <Switch>
+        <Route exact path="/login">
+          <Login setUser={setUser} />
+        </Route>
+        <Route exact path="/signup" >
+          <Signup setUser={setUser} />
+        </Route>
+        <Route exact path="/account" >
+          <Account user={user} />
+        </Route>
+        <Route exact path="/landing" component={LandingPage} />
+      </Switch>
+      <Container />
+      <Footer />
     </Router>
   )
 }

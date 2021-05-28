@@ -31,7 +31,7 @@ function Login(props) {
     console.log(loggedIN)
     // redirecting user to account page
     if (loggedIN.data) {
-    history.push("/account");
+      history.push("/account");
     }
   };
 
@@ -65,19 +65,19 @@ function Login(props) {
                   <div className="input-field">
                     <input name="email" id="username" type="text" className="validate"
                       onChange={(e) => handleInputChange(e)} />
-                    <label for="username">Email</label>
+                    <label htmlFor="username">Email</label>
                   </div>
                   <div className="input-field">
                     <input name="password" id="password" type="password" className="validate"
                       onChange={(e) => handleInputChange(e)} />
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                   </div>
                   <a href="/signup">Don't have an account? Register here!</a>
                   <br />
                   <br />
                   <div>
                     <input className="btn right" type="submit" value="Log In"
-                      />
+                    />
                     <a href="/container" className="btn-flat">Back</a>
                   </div>
                 </form>
