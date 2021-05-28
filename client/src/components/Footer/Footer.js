@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import "./footer.css";
 
 const Footer = (props) => {
   const history = useHistory();
@@ -14,22 +15,17 @@ const Footer = (props) => {
   };
   return (
     <footer className="page-footer card-content valign center ">
-      <div className="nav-content container">
+      <div className="nav-content container" >
         <ul className="tabs tabs-transparent">
           <li className="tab " onClick={handleClickLanding}>
-            <a href="#">
-              <i className="material-icons darken">
-                home <p className="footerFont">HOME</p>
+            <a href="./home">
+              <i className="material-icons ">
+                home               
+                <p className="footerFont">HOME</p>
               </i>
-              <p>Home</p>
             </a>
           </li>
 
-          {/* <li className="tab">
-            <a href="./charger">
-              <i className="material-icons">battery_charging_full <p className= "footerFont">CHARGER</p></i>
-            </a>
-          </li> */}
           <li className="tab" onClick={handleMapClick}>
             <a href="/map">
               <i className="material-icons">
