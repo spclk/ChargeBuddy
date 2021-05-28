@@ -10,7 +10,7 @@ export default function Map() {
     const map = useRef(null);
     const [lng, setLng] = useState(null);
     const [lat, setLat] = useState(null);
-    const [zoom, setZoom] = useState(9);
+    const [zoom, setZoom] = useState(15);
     const [status, setStatus] = useState(null);
     
     const getLocation = () => {
@@ -19,7 +19,7 @@ export default function Map() {
         } else {
           setStatus('Locating...');
           navigator.geolocation.getCurrentPosition((position) => {
-            setStatus(null);
+            setStatus("Located!");
             setLat(position.coords.latitude);
             setLng(position.coords.longitude);
             map.current.flyTo({
@@ -65,7 +65,7 @@ export default function Map() {
             <div className="sidebar">
                 Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} | Status: {status}
             </div>
-            <button onClick={getLocation}>Get Location</button>
+            <button onClick={getLocation} className="waves-effect waves-light btn"><i class="material-icons left">location_searching</i> Get Location</button>
             <div ref={mapContainer} className="map-container" />
         </div>
     );
