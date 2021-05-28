@@ -21,7 +21,7 @@ const userData = [
         email: "mybabysforeheadisanashtray@yahoo.com",
         password: 12345678,
 
-        car: [
+        car: 
             {
                 make: "tesla",
                 model: "Model 3",
@@ -29,8 +29,6 @@ const userData = [
                 date: new Date(Date.now()),
                 evPort: "J1772"
             }
-        ]
-
 
     },
     {
@@ -39,7 +37,7 @@ const userData = [
         zip_code: 90035,
         email: "prostitutesarefun@gmail.com",
         password: 12345678,
-        car: [
+        car: 
             {
                 make: "Nissan",
                 model: "LEAF",
@@ -47,8 +45,6 @@ const userData = [
                 date: new Date(Date.now()),
                 evPort: "CHAdeMO"
             }
-        ]
-
 
     },
     {
@@ -57,7 +53,7 @@ const userData = [
         zip_code: 90210,
         email: "iamflatoutcrazy@gmail.com",
         password: 12345678,
-        car: [
+        car: 
             {
                 make: "Hyundai",
                 model: "loniq EV",
@@ -65,7 +61,7 @@ const userData = [
                 evPort: "J1772",
                 date: new Date(Date.now()),
             }
-        ]
+        
 
     },
     {
@@ -74,7 +70,7 @@ const userData = [
         zip_code: 90211,
         email: "cocaineanyone?@hotmail.com",
         password: 12345678,
-        car: [
+        car: 
             {
                 make: "Audi",
                 model: "e-tron",
@@ -82,7 +78,7 @@ const userData = [
                 evPort: "CHAdeMO",
                 date: new Date(Date.now()),
             }
-        ]
+        
 
 
     },
@@ -92,7 +88,7 @@ const userData = [
         zip_code: 93108,
         email: "clarkgriswald@gmail.com",
         password: 12345678,
-        car: [
+        car: 
             {
                 make: "Porsche",
                 model: "Taycan",
@@ -100,7 +96,7 @@ const userData = [
                 evPort: "J1772COMBO",
                 date: new Date(Date.now()),
             }
-        ]
+        
 
 
     },

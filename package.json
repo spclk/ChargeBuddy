@@ -11,7 +11,8 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^9.0.2",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
