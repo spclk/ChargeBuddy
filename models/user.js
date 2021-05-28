@@ -32,27 +32,19 @@ const userSchema = new Schema(
       type: Date,
       default: Date.now,
     },
+    car: {
+      make: String,
+      model: String,
+      year: Number,
+      evPort: String
+    }
   },
   {
     toJson: {
       virtuals: true,
-    },
-  }
-);
-    
-    car: {
-        type: Array,
-        default: []
     }
-
-
-
-
-
-
-
-
 });
+
 userSchema.pre("save", async function (next) {
     const user = this;
 

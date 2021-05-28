@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
+import M from 'materialize-css/dist/js/materialize.min.js';
 
-const Account = () => {
+const Account = ({user}) => {
+  useEffect(() => {
+    M.AutoInit();
+  })
   return (
     <div>
       <main>
@@ -10,7 +14,7 @@ const Account = () => {
               <span className="settings-title">
                 <h5>Personal Information</h5>
               </span>
-              <p>your info</p>
+              <p>info</p>
             </div>
 
             <div className="col s12 m8">
@@ -18,19 +22,19 @@ const Account = () => {
                 <li>
                   <div className="collapsible-header">Name</div>
                   <div className="collapsible-body">
-                    <span>Lorem ipsum dolor sit amet.</span>
+                    <span>{user.first_name} {user.last_name}</span>
                   </div>
                 </li>
                 <li>
                   <div className="collapsible-header">Email</div>
                   <div className="collapsible-body">
-                    <span>Lorem ipsum dolor sit amet.</span>
+                    <span>{user.email}</span>
                   </div>
                 </li>
                 <li>
                   <div className="collapsible-header">Home Location</div>
                   <div className="collapsible-body">
-                    <span>Lorem ipsum dolor sit amet.</span>
+                    <span>{user.zip_code}</span>
                   </div>
                 </li>
               </ul>
@@ -50,17 +54,17 @@ const Account = () => {
                 <li>
                   <div className="collapsible-header">Vehicle</div>
                   <div className="collapsible-body">
-                    <span>Lorem ipsum dolor sit amet.</span>
+                    <span>{user.car.year} {user.car.make} {user.car.model}</span>
                   </div>
                 </li>
                 <li>
                   <div className="collapsible-header">Plug Type</div>
                   <div className="collapsible-body">
-                    <span>Lorem ipsum dolor sit amet.</span>
+                    <span>{user.car.evPort}</span>
                   </div>
                 </li>
                 <li>
-                  <div className="collapsible-header">Charging</div>
+                  <div className="collapsible-header">Charging History</div>
                   <div className="collapsible-body">
                     <span>Lorem ipsum dolor sit amet.</span>
                   </div>

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
-function Login() {
+function Login(props) {
 
   const history = useHistory();
 
@@ -27,11 +27,12 @@ function Login() {
     event.preventDefault();
     //hit the server with a post request containing the email and password
     const loggedIN = await axios.post("/api/user/login", details);
+    props.setUser(loggedIN.data)
     console.log(loggedIN)
     // redirecting user to account page
-    // if (loggedIN.data) {
-    //   history.push("/account");
-    // }
+    if (loggedIN.data) {
+    history.push("/account");
+    }
   };
 
   return (

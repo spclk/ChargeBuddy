@@ -38,17 +38,16 @@ const Signup = (props) => {
       zip_code: details.zip,
       email: details.email,
       password: details.password,
-      car: [
+      car: 
         {
           make: details.make,
           model: details.model,
           year: details.year,
           evPort: details.evPort,
         },
-      ],
     };
     const newUser = await axios.post("/api/user", user);
-    props.setUser(newUser)
+    props.setUser(newUser.data)
     // redirecting user to account page
     if (newUser.data) {
       history.push("/account");

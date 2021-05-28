@@ -27,12 +27,16 @@ function App() {
     <Router>
         <Navbar />
           <Switch>
-            <Route exact path="/login" component={Login}/>
+            <Route exact path="/login">
+              <Login setUser={setUser}/>
+            </Route>
             <Route exact path="/signup" >
-              <Signup setUser={setUser} />
+              <Signup setUser={setUser}/>
+            </Route>
+            <Route exact path="/account" >
+              <Account user={user}/>
             </Route>
             <Route exact path="/landing" component={LandingPage} />
-            <Route exact path="/account" component={Account} />
           </Switch>
         <Container />
         <Footer /> 
