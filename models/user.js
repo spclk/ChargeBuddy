@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require('bcryptjs')
+const bcrypt = require("bcryptjs");
 
 const Schema = mongoose.Schema;
 
@@ -36,26 +36,25 @@ const userSchema = new Schema(
       make: String,
       model: String,
       year: Number,
-      evPort: String
-    }
+      evPort: String,
+    },
   },
   {
     toJson: {
       virtuals: true,
-    }
-});
+    },
+  }
+);
 
 userSchema.pre("save", async function (next) {
-    const user = this;
+  const user = this;
 
-    if (user.isModified("password")) {
-        user.password = await bcrypt.hash(user.password, 8);
-    }
+  if (user.isModified("password")) {
+    user.password = await bcrypt.hash(user.password, 8);
+  }
 
-    next();
+  next();
 });
-
-
 
 const User = mongoose.model("User", userSchema);
 
