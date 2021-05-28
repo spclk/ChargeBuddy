@@ -10,6 +10,8 @@ import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer";
 import Account from './components/Account/Account';
 import LandingPage from "./components/LandingPage/LandingPage";
+import Map from "./components/Map/Map";
+import { set } from "mongoose";
 
 
 function App() {
@@ -36,6 +38,9 @@ function App() {
               <Account user={user}/>
             </Route>
             <Route exact path="/landing" component={LandingPage} />
+            <Route exact path="/map">
+              <Map />
+            </Route>
           </Switch>
         <Container />
         <Footer /> 
