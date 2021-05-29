@@ -7,3 +7,25 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+  /* Footer Styling */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerFont {
+  font-size: small;
+  margin-top: 0;
+}
+
+
+
+/*Custom Text Color While Active*/
+.tabs .tab a:focus.active {
+  color: black;
+
+}
+
+
