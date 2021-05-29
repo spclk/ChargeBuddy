@@ -66,7 +66,7 @@ const Signup = (props) => {
                   method="post"
                   action="/account"
                   id="create_customer"
-                  accept-charset="UTF-8"
+                  acceptCharset="UTF-8"
                 >
                   <input
                     type="hidden"
@@ -77,18 +77,18 @@ const Signup = (props) => {
                   <h5 className="center">ABOUT YOU</h5>
 
                   <div className="input-field">
-                    <label for="FirstName">First Name</label>
+                    <label htmlFor="FirstName">First Name</label>
                     <input
                       type="text"
                       name="firstName"
                       id="FirstName"
-                      autofocus
+                      autoFocus
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="LastName">Last Name</label>
+                    <label htmlFor="LastName">Last Name</label>
                     <input
                       type="text"
                       name="lastName"
@@ -98,7 +98,7 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="ZipCode">Zip Code</label>
+                    <label htmlFor="ZipCode">Zip Code</label>
                     <input
                       type="text"
                       name="zip"
@@ -108,22 +108,22 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="Email">Email</label>
+                    <label htmlFor="Email">Email</label>
                     <input
                       type="email"
                       name="email"
                       id="Email"
                       className=""
                       value={details.email}
-                      spellcheck="false"
-                      autocomplete="off"
-                      autocapitalize="off"
+                      spellCheck="false"
+                      autoComplete="off"
+                      autoCapitalize="off"
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="CreatePassword">Create a Password</label>
+                    <label htmlFor="CreatePassword">Create a Password</label>
                     <input
                       type="password"
                       name="password"
@@ -141,7 +141,7 @@ const Signup = (props) => {
                   method="post"
                   action="/account"
                   id="create_customer"
-                  accept-charset="UTF-8"
+                  acceptCharset="UTF-8"
                   onSubmit={(e) => handleFormSubmit(e)}
                 >
                   <input
@@ -153,18 +153,18 @@ const Signup = (props) => {
                   <h5 className="center">ABOUT YOUR VEHICLE</h5>
 
                   <div className="input-field">
-                    <label for="Make">Make</label>
+                    <label htmlFor="Make">Make</label>
                     <input
                       type="text"
                       name="make"
                       id="Make"
-                      autofocus
+                      autoFocus
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="Model">Model</label>
+                    <label htmlFor="Model">Model</label>
                     <input
                       type="text"
                       name="model"
@@ -174,7 +174,7 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="Model">Year</label>
+                    <label htmlFor="Model">Year</label>
                     <input
                       type="text"
                       name="year"
@@ -183,41 +183,42 @@ const Signup = (props) => {
                     />
                   </div>
 
+                  {/* Plug Types */}
                   <h6 className="center">Choose Your Plug</h6>
 
-                  <div className="col s3" 
+                  <div className="col s2" 
                     onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
                     <img
                       src="./images/J1772.png"
                       alt=""
-                      className="circle responsive-img"
+                      className="circle responsive-img hoverable"
                     />
                     <div className="chip">J1772</div>
                   </div>
 
-                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
                     <img
                       src="./images/chademo.png"
                       alt=""
-                      className="circle responsive-img"
+                      className="circle responsive-img hoverable"
                     />
                     <div className="chip">CHADEMO</div>
                   </div>
 
-                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
                     <img
                       src="./images/combo.png"
                       alt=""
-                      className="circle responsive-img"
+                      className="circle responsive-img hoverable"
                     />
                     <div className="chip">COMBO</div>
                   </div>
 
-                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
                     <img
                       src="./images/tesla.png"
                       alt=""
-                      className="circle responsive-img"
+                      className="circle responsive-img hoverable"
                     />
                     <div className="chip">TESLA</div>
                   </div>
