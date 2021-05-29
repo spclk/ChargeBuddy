@@ -236,9 +236,9 @@ const Signup = (props) => {
                       <input
                         type="submit"
                         value="Register"
-                        className="btn-large z-depth-0"
+                        className="btn left blue-grey lighten-1"
                       />
-                      <a className="hide-on-med-and-down"href="/login"> {""}Registered? Login here!</a>
+                      <a className="hide-on-med-and-down"href="/login">Registered? Login here!</a>
                     </p>
                   </div>
                 </form>

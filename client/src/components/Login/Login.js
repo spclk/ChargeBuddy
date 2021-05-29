@@ -45,11 +45,11 @@ function Login(props) {
               <div className="center-align card-login-splash">
                 <div className="wrapper">
                   <h3 className="">Account</h3>
-                  <a className="btn" href="/login">
+                  <a className="btn blue-grey lighten-1" href="/login">
                     Log In
                   </a>
                   {" "} {/* Adds whitespace between two buttons*/}
-                  <a className="btn" href="/signup">
+                  <a className="btn blue-grey lighten-1" href="/signup">
                     Register
                   </a>
                 </div>
@@ -72,13 +72,12 @@ function Login(props) {
                       onChange={(e) => handleInputChange(e)} />
                     <label htmlFor="password">Password</label>
                   </div>
-                  <a href="/signup">Don't have an account? Register here!</a>
+                  <a href="/signup">No account? Register now!</a>
                   <br />
                   <br />
                   <div>
-                    <input className="btn right" type="submit" value="Log In"
+                    <input className="btn right blue-grey lighten-1" type="submit" value="Log In"
                       />
-                    <a href="/container" className="btn-flat">Back</a>
                   </div>
                 </form>
               </div>

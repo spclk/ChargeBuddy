@@ -16,7 +16,7 @@ const Account = ({user}) => {
               <span className="settings-title">
                 <h5>Personal Information</h5>
               </span>
-              <p>info</p>
+              <p>expand for more details</p>
             </div>
 
             <div className="col s12 m8">
@@ -48,7 +48,7 @@ const Account = ({user}) => {
               <span className="settings-title">
                 <h5>Vehicle Information</h5>
               </span>
-              <p>vehicle info</p>
+              <p>expand for more details</p>
             </div>
 
             <div className="col s12 m8">
@@ -81,7 +81,6 @@ const Account = ({user}) => {
       <p>start adding prices and tips on the Map page</p>
       <a className="waves-effect waves-light btn-large">GO TO MAP</a>
       </div>
-      <h1>My car information</h1>
     </div>
     : <Redirect to="/login"/>
   );

@@ -3,7 +3,7 @@ import "./Navbar.css"
 
 const Navbar = () => {
     return (
-        <nav>
+        <nav className="blue-grey lighten-1">
             <div className="nav-wrapper">
                 <a href="/" className="brand-logo"><i className="large material-icons">ev_station</i>ChargeBuddy</a>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
