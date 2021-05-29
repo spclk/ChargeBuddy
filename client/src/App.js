@@ -26,7 +26,6 @@ function App() {
 
   return (
     <Router>
-<<<<<<< HEAD
       <Navbar />
       <Switch>
         <Route exact path="/login">
@@ -39,29 +38,12 @@ function App() {
           <Account user={user} />
         </Route>
         <Route exact path="/landing" component={LandingPage} />
+        <Route exact path="/map">
+          <Map />
+        </Route>
       </Switch>
       <Container />
       <Footer />
-=======
-        <Navbar />
-          <Switch>
-            <Route exact path="/login">
-              <Login setUser={setUser}/>
-            </Route>
-            <Route exact path="/signup" >
-              <Signup setUser={setUser}/>
-            </Route>
-            <Route exact path="/account" >
-              <Account user={user}/>
-            </Route>
-            <Route exact path="/landing" component={LandingPage} />
-            <Route exact path="/map">
-              <Map />
-            </Route>
-          </Switch>
-        <Container />
-        <Footer /> 
->>>>>>> 172545ce3141229708175c0242626d85f4b40d1b
     </Router>
   )
 }
