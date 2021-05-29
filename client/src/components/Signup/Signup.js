@@ -184,54 +184,63 @@ const Signup = (props) => {
                   </div>
 
                   {/* Plug Types */}
-                  <h6 className="center">Choose Your Plug</h6>
-
-                  <div className="col s2" 
-                    onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
+                  <h6 className="center">Plug Type</h6>
+                  <br />
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
                     <img
-                      src="./images/J1772.png"
+                      src="./images/plug-nema.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip">J1772</div>
+                    <div className="chip hide-on-med-and-down">Nema520</div>
+                  </div>
+
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
+                    <img
+                      src="./images/plug-J1772.png"
+                      alt=""
+                      className="circle responsive-img hoverable"
+                    />
+                    <div className="chip hide-on-med-and-down">J1772</div>
                   </div>
 
                   <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
                     <img
-                      src="./images/chademo.png"
+                      src="./images/plug-chademo.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip">CHADEMO</div>
+                    <div className="chip hide-on-med-and-down">CHAdeMO</div>
                   </div>
 
                   <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
                     <img
-                      src="./images/combo.png"
+                      src="./images/plug-combo.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip">COMBO</div>
+                    <div className="chip hide-on-med-and-down">Combo</div>
                   </div>
 
                   <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
                     <img
-                      src="./images/tesla.png"
+                      src="./images/plug-tesla.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip">TESLA</div>
+                    <div className="chip hide-on-med-and-down">Nema520</div>
                   </div>
 
-                  <br />
-                  <p>
-                    <input
-                      type="submit"
-                      value="Register"
-                      className="btn-large z-depth-0"
-                    />
-                    <a href="/login"> {""}Already registered? Login here!</a>
-                  </p>
+                  <div className="row">
+                    <p className="col s12" >
+                      <input
+                        type="submit"
+                        value="Register"
+                        className="btn-large z-depth-0"
+                      />
+                      <a className="hide-on-med-and-down"href="/login"> {""}Registered? Login here!</a>
+                    </p>
+                  </div>
                 </form>
               </div>
               {/* right side content ends here */}
