@@ -79,7 +79,7 @@ const Account = ({user}) => {
       <div className="center-align">
       <p>Now that you're part of the ChargeBuddy community, </p>
       <p>start adding prices and tips on the Map page</p>
-      <a className="waves-effect waves-light btn-large">GO TO MAP</a>
+      <a href="/map" className="waves-effect waves-light btn-large blue-grey lighten-1">GO TO MAP</a>
       </div>
     </div>
     : <Redirect to="/login"/>

@@ -43,16 +43,6 @@ function Login(props) {
             <div className="card card-login">
               {/* left side content begins here*/}
               <div className="center-align card-login-splash">
-                <div className="wrapper">
-                  <h3 className="">Account</h3>
-                  <a className="btn blue-grey lighten-1" href="/login">
-                    Log In
-                  </a>
-                  {" "} {/* Adds whitespace between two buttons*/}
-                  <a className="btn blue-grey lighten-1" href="/signup">
-                    Register
-                  </a>
-                </div>
                 <img className="responsive-img"
                   src="./images/charger.jpeg"
                   alt=""

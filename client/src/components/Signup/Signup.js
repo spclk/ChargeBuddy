@@ -228,7 +228,7 @@ const Signup = (props) => {
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">Nema520</div>
+                    <div className="chip hide-on-med-and-down">Tesla</div>
                   </div>
 
                   <div className="row">
