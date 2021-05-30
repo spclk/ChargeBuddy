@@ -3,7 +3,7 @@ import "./LandingPage.css";
 import classes from "./BackgroundVideo.module.css";
 
 const LandingPage = () => {
-  const firstVideo = "./images/road.mp4";
+  const firstVideo = "./images/car.mp4";
   const secondVideo = "./images/charging.mp4";
 
   return (
@@ -17,7 +17,7 @@ const LandingPage = () => {
 
         <div className={classes.Content}>
           <div className={classes.SubContent}>
-            <h1>ChargeBuddy</h1>
+            <h3>Need a recharge?</h3>
             <p>
               Is your Electric Vehicle depleted? Have a sinking feeling in your
               stomach? You're not going to make it. In your mind charging
@@ -26,9 +26,6 @@ const LandingPage = () => {
               tragedy that others joke about at your next party. It doesn't have
               to be this way!
             </p>
-            <button type="button" className="btn btn-outline-dark">
-              GO TO MAP
-            </button>
           </div>
         </div>
       </div>
@@ -43,17 +40,12 @@ const LandingPage = () => {
 
         <div className={classes.Content}>
           <div className={classes.SubContent}>
-            <h1>ChargeBuddy</h1>
+            <h3>ChargeBuddy is your answer!</h3>
             <p>
-              Is your Electric Vehicle depleted? Have a sinking feeling in your
-              stomach? You're not going to make it. In your mind charging
-              stations would be everywhere! How much does it cost? You're now on
-              borrowed time and your middle aged road trip will soon be a
-              tragedy that others joke about at your next party. It doesn't have
-              to be this way!
+            Charge Buddy offers geolocation as well as peer to peer networking allowing our users to update pricing information.  Locations of all  Charging Stations in your vicinity are displayed on your map, making sure that you arrive at your destination with your head held high. Once you create an account with us your information is securely stored on our server.  You will also be able to update pricing saving other unfortunates from being the punchline at Thanksgiving.  Charge Buddy is not the friend you want but the friend you need. 
             </p>
             <button type="button" className="btn btn-outline-dark">
-              GO TO MAP
+              START NOW
             </button>
           </div>
         </div>
