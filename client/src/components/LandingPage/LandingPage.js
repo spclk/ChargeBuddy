@@ -44,9 +44,10 @@ const LandingPage = () => {
             <p>
             Charge Buddy offers geolocation as well as peer to peer networking allowing our users to update pricing information.  Locations of all  Charging Stations in your vicinity are displayed on your map, making sure that you arrive at your destination with your head held high. Once you create an account with us your information is securely stored on our server.  You will also be able to update pricing saving other unfortunates from being the punchline at Thanksgiving.  Charge Buddy is not the friend you want but the friend you need. 
             </p>
-            <button type="button" className="btn btn-outline-dark">
+            {/* <button type="button" className="btn btn-outline-dark">
               START NOW
-            </button>
+            </button> */}
+            <a className="waves-effect waves-light btn-large">Button</a>
           </div>
         </div>
       </div>
