@@ -30,7 +30,7 @@ const Signup = (props) => {
   };
 
   // adding data to the database
-  const handlehtmlFormSubmit = async (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     const user = {
       first_name: details.firstName,
