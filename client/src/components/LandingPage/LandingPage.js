@@ -48,7 +48,7 @@ const LandingPage = () => {
             <br/>
             <p> Charge Buddy is not the friend you want but the friend you need!</p>
             <button type="button">
-              START NOW
+            <a href="/map">START NOW</a>
             </button>
             {/* <a className="waves-effect waves-light btn-large orange darken-2">START NOW</a> */}
           </div>

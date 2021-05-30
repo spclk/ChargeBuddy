@@ -4,6 +4,7 @@
     max-height: 800px; */
     overflow: hidden;
     margin-bottom: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Style the video: 100% width and height to cover the entire window */
@@ -49,6 +50,9 @@
   .SubContent button:hover {
       background-color: hsla(0, 0%, 0%, 0);
       color: #d37912;
+  }
+  .SubContent a {
+    color: white;
   }
 
   .SubContent img {
