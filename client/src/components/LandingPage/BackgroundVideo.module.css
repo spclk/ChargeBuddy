@@ -1,18 +1,19 @@
 .Container {
     position: relative;
-    min-height: 300px;
-    max-height: 800px;
+    /* min-height: 300px;
+    max-height: 800px; */
     overflow: hidden;
-    margin-bottom: 500px;
+    margin-bottom: 0px;
 }
 
 /* Style the video: 100% width and height to cover the entire window */
 .Video {
-    width: 100%;
+    /* max-width: 3000px; */
+    /* width: 130%; */
     height: 100%;
   }
   
-  /* Add some content at the bottom of the video/page */
+  /* Content at the bottom of the video/page */
   .Content {
     position: absolute;
     top: 0;
