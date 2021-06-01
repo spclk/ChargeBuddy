@@ -35,24 +35,52 @@ export default function Map() {
         }
       }
 
-    useEffect(() => {
-        if (map.current) return; // initialize map only once
-        map.current = new mapboxgl.Map({
-            container: mapContainer.current,
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [lng, lat],
-            zoom: zoom
-        });
-    },[lng, lat]);
-     
-    useEffect(() => {
-        if (!map.current) return; // wait for map to initialize
-        map.current.on('move', () => {
-            setLng(map.current.getCenter().lng.toFixed(4));
-            setLat(map.current.getCenter().lat.toFixed(4));
-            setZoom(map.current.getZoom().toFixed(2));
-        });
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      setStatus('Geolocation is not supported by your browser');
+    } else {
+      setStatus('Locating...');
+      navigator.geolocation.getCurrentPosition((position) => {
+        setStatus("Located!");
+        setLat(position.coords.latitude);
+        setLng(position.coords.longitude);
+        map.current.flyTo({
+          center: [position.coords.longitude, position.coords.latitude],
+          essential: true
+        })
+      }, () => {
+        setStatus('Unable to retrieve your location');
+      });
+    }
+  }
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: zoom
     });
+  }, [lng, lat]);
+
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on('move', () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    });
+  });
+
+  // useEffect(() => {
+  //     if (!map.current) return; // wait for map to initialize
+  //     map.current.on('move', () => {
+  //         setLng(lng);
+  //         setLat(lat);
+  //         setZoom(map.current.getZoom().toFixed(2));
+  //     });
+  // }, [lng, lat]);
 
     // Extract data from API to create markers for charging stations
     useEffect(() => {

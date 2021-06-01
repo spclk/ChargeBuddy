@@ -31,7 +31,7 @@ function Login(props) {
     console.log(loggedIN)
     // redirecting user to account page
     if (loggedIN.data) {
-    history.push("/account");
+      history.push("/account");
     }
   };
 
@@ -67,7 +67,7 @@ function Login(props) {
                   <br />
                   <div>
                     <input className="btn right blue-grey lighten-1" type="submit" value="Log In"
-                      />
+                    />
                   </div>
                 </form>
               </div>

@@ -20,7 +20,7 @@ const Signup = (props) => {
     evPort: ""
   });
 
-  // gathering data from forms
+  // gathering data from htmlForms
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setDetails({
@@ -38,13 +38,13 @@ const Signup = (props) => {
       zip_code: details.zip,
       email: details.email,
       password: details.password,
-      car: 
-        {
-          make: details.make,
-          model: details.model,
-          year: details.year,
-          evPort: details.evPort,
-        },
+      car:
+      {
+        make: details.make,
+        model: details.model,
+        year: details.year,
+        evPort: details.evPort,
+      },
     };
     const newUser = await axios.post("/api/user", user);
     props.setUser(newUser.data)
@@ -60,7 +60,7 @@ const Signup = (props) => {
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
-              {/* left side content of Signup form*/}
+              {/* left side content of Signup htmlForm*/}
               <div className="card-content">
                 <form
                   method="post"
@@ -70,7 +70,7 @@ const Signup = (props) => {
                 >
                   <input
                     type="hidden"
-                    name="form_type"
+                    name="htmlForm_type"
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
@@ -135,7 +135,7 @@ const Signup = (props) => {
                 </form>
               </div>
 
-              {/* right side content of Signup form*/}
+              {/* right side content of Signup htmlForm*/}
               <div className="card-content">
                 <form
                   method="post"
@@ -238,7 +238,7 @@ const Signup = (props) => {
                         value="Register"
                         className="btn left blue-grey lighten-1"
                       />
-                      <a className="hide-on-med-and-down"href="/login">Registered? Login here!</a>
+                      <a className="hide-on-med-and-down" href="/login">Registered? Login here!</a>
                     </p>
                   </div>
                 </form>
