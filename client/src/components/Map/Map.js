@@ -1,10 +1,17 @@
 import React, { useRef, useEffect, useState } from "react";
-// import dotenv from "dotenv";
 import API from '../../utils/API';
 import "./style.css"
-// import Mapbox
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-mapboxgl.accessToken = "pk.eyJ1Ijoid2NsYXJrY2l0byIsImEiOiJja3AzNWlyNTEwMzN2MnBvNjJzOWFsdDE3In0.pj6UqUFZUmo1LF4hLeXaQA";
+import ReactMapGL, {GeolocateControl, Marker, Popup} from 'react-map-gl'
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl'; // eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default; // eslint-disable-line import/no-webpack-loader-syntax
+
+const accessToken = "pk.eyJ1Ijoid2NsYXJrY2l0byIsImEiOiJja3AzNWlyNTEwMzN2MnBvNjJzOWFsdDE3In0.pj6UqUFZUmo1LF4hLeXaQA";
+
+const geolocateControlStyle= {
+  right: 10,
+  top: 10
+};
 
 export default function Map() {
     const mapContainer = useRef(null);
@@ -13,65 +20,55 @@ export default function Map() {
     const [lat, setLat] = useState(null);
     const [zoom, setZoom] = useState(15);
     const [status, setStatus] = useState(null);
+    const [viewport, setViewport] = useState({
+      width: "100%",
+      height: 600,
+      latitude: 37.7577,
+      longitude: -122.4376,
+      zoom: 12
+    });
+    const [markers, setMarkers] = useState([]);
+    const [showPopup, togglePopup] = useState(false);
     
     // The user must first allow the browser to use location services
-    const getLocation = () => {
-        if (!navigator.geolocation) {
-          setStatus('Geolocation is not supported by your browser');
-        } else {
-          setStatus('Locating...');
-          navigator.geolocation.getCurrentPosition((position) => {
-            setStatus("Located!");
-            setLat(position.coords.latitude);
-            setLng(position.coords.longitude);
-            // Once the user allows for location services then the map will zoom in on their location
-            map.current.flyTo({
-                center: [position.coords.longitude, position.coords.latitude],
-                essential: true
-            })
-          }, () => {
-            setStatus('Unable to retrieve your location');
-          });
-        }
-      }
+    // const getLocation = () => {
+    //     if (!navigator.geolocation) {
+    //       setStatus('Geolocation is not supported by your browser');
+    //     } else {
+    //       setStatus('Locating...');
+    //       navigator.geolocation.getCurrentPosition((position) => {
+    //         setStatus("Located!");
+    //         setLat(position.coords.latitude);
+    //         setLng(position.coords.longitude);
+    //         // Once the user allows for location services then the map will zoom in on their location
+    //         map.current.flyTo({
+    //             center: [position.coords.longitude, position.coords.latitude],
+    //             essential: true
+    //         })
+    //       }, () => {
+    //         setStatus('Unable to retrieve your location');
+    //       });
+    //     }
+    //   }
 
-  const getLocation = () => {
-    if (!navigator.geolocation) {
-      setStatus('Geolocation is not supported by your browser');
-    } else {
-      setStatus('Locating...');
-      navigator.geolocation.getCurrentPosition((position) => {
-        setStatus("Located!");
-        setLat(position.coords.latitude);
-        setLng(position.coords.longitude);
-        map.current.flyTo({
-          center: [position.coords.longitude, position.coords.latitude],
-          essential: true
-        })
-      }, () => {
-        setStatus('Unable to retrieve your location');
-      });
-    }
-  }
+  // useEffect(() => {
+  //   if (map.current) return; // initialize map only once
+  //   map.current = new mapboxgl.Map({
+  //     container: mapContainer.current,
+  //     style: 'mapbox://styles/mapbox/streets-v11',
+  //     center: [lng, lat],
+  //     zoom: zoom
+  //   });
+  // }, [lng, lat]);
 
-  useEffect(() => {
-    if (map.current) return; // initialize map only once
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [lng, lat],
-      zoom: zoom
-    });
-  }, [lng, lat]);
-
-  useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
-    map.current.on('move', () => {
-      setLng(map.current.getCenter().lng.toFixed(4));
-      setLat(map.current.getCenter().lat.toFixed(4));
-      setZoom(map.current.getZoom().toFixed(2));
-    });
-  });
+  // useEffect(() => {
+  //   if (!map.current) return; // wait for map to initialize
+  //   map.current.on('move', () => {
+  //     setLng(map.current.getCenter().lng.toFixed(4));
+  //     setLat(map.current.getCenter().lat.toFixed(4));
+  //     setZoom(map.current.getZoom().toFixed(2));
+  //   });
+  // });
 
   // useEffect(() => {
   //     if (!map.current) return; // wait for map to initialize
@@ -90,8 +87,9 @@ export default function Map() {
             let features = res.data.features;
             // Create empty array to store geoJSON
             let geojson = [];
+            // Create empty array to store charging station coordinates
+            let newMarkers = [];
             for (let i = 0; i < features.length; i++) {
-                // console.log(features[i]);
                 //extracting data from API
                 let lng = features[i].geometry.coordinates[0];
                 let lat = features[i].geometry.coordinates[1];
@@ -123,39 +121,39 @@ export default function Map() {
                 });
             };
             //console.log(geojson[0].features);
-            // add markers to map
-            for (var i = 0; i < geojson.length; i++){
-                geojson[i].features.forEach(function (marker) {
-                    // create a HTML element for each feature
-                    var el = document.createElement('div');
-                    el.className = 'marker';
-         
-                    // make a marker for each feature and add it to the map
-                    new mapboxgl.Marker(el)
-                        .setLngLat(marker.geometry.coordinates)
-                        .setPopup(
-                            new mapboxgl.Popup({ offset: 25 }) // add popups
-                                .setHTML(
-                                    '<h3>' +
-                                    marker.properties.title +
-                                    '</h3><p>' +
-                                    marker.properties.description +
-                                    '</p>'
-                                )
-                        )
-                        .addTo(this.map);
-                });
-            }
+              // add markers to map
+              for (var i = 0; i < geojson.length; i++){
+                  geojson[i].features.forEach(function (marker) {
+                      // make a marker for each feature and add it to the map
+                      console.log(marker.geometry.coordinates);
+                      newMarkers.push(marker.geometry.coordinates);
+                  });
+              }
+              setMarkers(newMarkers)
         })
-    });
+    }, []);
 
     return (
         <div>
             <div className="sidebar">
                 Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} | Status: {status}
             </div>
-            <button onClick={getLocation} className="waves-effect waves-light btn"><i className="material-icons left">location_searching</i> Get Location</button>
-            <div ref={mapContainer} className="map-container" />
+            {/* <button onClick={getLocation} className="waves-effect waves-light btn"><i className="material-icons left">location_searching</i> Get Location</button> */}
+            {/* <div ref={mapContainer} className="map-container" /> */}
+            <ReactMapGL mapboxApiAccessToken={accessToken} {...viewport} width="100vw" height="100vh" onViewportChange={setViewport}>
+              <GeolocateControl
+                fitBoundsOptions={{maxZoom: 12}}
+                style={geolocateControlStyle}
+                positionOptions={{enableHighAccuracy: true}}
+                trackUserLocation={true}
+                auto
+              />
+              {markers.map((marker) => (
+                <Marker latitude={marker[1]} longitude={marker[0]} key={marker[0] + marker[1]}>
+                  <img src="/images/chargeIcon.png" className="marker"/>
+                </ Marker>
+              ))}
+            </ReactMapGL>
         </div>
     );
 }
