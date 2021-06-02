@@ -25,6 +25,7 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^9.0.2",
     "express": "^4.16.3",
+    "express-session": "^1.17.2",
     "if-env": "^1.0.4",
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.12.9",

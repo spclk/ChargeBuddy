@@ -20,7 +20,7 @@ const Signup = (props) => {
     evPort: ""
   });
 
-  // gathering data from forms
+  // gathering data from htmlForms
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setDetails({
@@ -38,13 +38,13 @@ const Signup = (props) => {
       zip_code: details.zip,
       email: details.email,
       password: details.password,
-      car: 
-        {
-          make: details.make,
-          model: details.model,
-          year: details.year,
-          evPort: details.evPort,
-        },
+      car:
+      {
+        make: details.make,
+        model: details.model,
+        year: details.year,
+        evPort: details.evPort,
+      },
     };
     const newUser = await axios.post("/api/user", user);
     props.setUser(newUser.data)
@@ -60,35 +60,35 @@ const Signup = (props) => {
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
-              {/* left side content of Signup form*/}
+              {/* left side content of Signup htmlForm*/}
               <div className="card-content">
                 <form
                   method="post"
                   action="/account"
                   id="create_customer"
-                  accept-charset="UTF-8"
+                  acceptCharset="UTF-8"
                 >
                   <input
                     type="hidden"
-                    name="form_type"
+                    name="htmlForm_type"
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
                   <h5 className="center">ABOUT YOU</h5>
 
                   <div className="input-field">
-                    <label for="FirstName">First Name</label>
+                    <label htmlFor="FirstName">First Name</label>
                     <input
                       type="text"
                       name="firstName"
                       id="FirstName"
-                      autofocus
+                      autoFocus
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="LastName">Last Name</label>
+                    <label htmlFor="LastName">Last Name</label>
                     <input
                       type="text"
                       name="lastName"
@@ -98,7 +98,7 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="ZipCode">Zip Code</label>
+                    <label htmlFor="ZipCode">Zip Code</label>
                     <input
                       type="text"
                       name="zip"
@@ -108,22 +108,22 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="Email">Email</label>
+                    <label htmlFor="Email">Email</label>
                     <input
                       type="email"
                       name="email"
                       id="Email"
                       className=""
                       value={details.email}
-                      spellcheck="false"
-                      autocomplete="off"
-                      autocapitalize="off"
+                      spellCheck="false"
+                      autoComplete="off"
+                      autoCapitalize="off"
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="CreatePassword">Create a Password</label>
+                    <label htmlFor="CreatePassword">Create a Password</label>
                     <input
                       type="password"
                       name="password"
@@ -135,13 +135,13 @@ const Signup = (props) => {
                 </form>
               </div>
 
-              {/* right side content of Signup form*/}
+              {/* right side content of Signup htmlForm*/}
               <div className="card-content">
                 <form
                   method="post"
                   action="/account"
                   id="create_customer"
-                  accept-charset="UTF-8"
+                  acceptCharset="UTF-8"
                   onSubmit={(e) => handleFormSubmit(e)}
                 >
                   <input
@@ -153,18 +153,18 @@ const Signup = (props) => {
                   <h5 className="center">ABOUT YOUR VEHICLE</h5>
 
                   <div className="input-field">
-                    <label for="Make">Make</label>
+                    <label htmlFor="Make">Make</label>
                     <input
                       type="text"
                       name="make"
                       id="Make"
-                      autofocus
+                      autoFocus
                       onChange={(e) => handleInputChange(e)}
                     />
                   </div>
 
                   <div className="input-field">
-                    <label for="Model">Model</label>
+                    <label htmlFor="Model">Model</label>
                     <input
                       type="text"
                       name="model"
@@ -174,7 +174,7 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label for="Model">Year</label>
+                    <label htmlFor="Model">Year</label>
                     <input
                       type="text"
                       name="year"
@@ -183,54 +183,64 @@ const Signup = (props) => {
                     />
                   </div>
 
-                  <h6 className="center">Choose Your Plug</h6>
-
-                  <div className="col s3" 
-                    onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
-                    <img
-                      src="./images/J1772.png"
-                      alt=""
-                      className="circle responsive-img"
-                    />
-                    <div className="chip">J1772</div>
-                  </div>
-
-                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
-                    <img
-                      src="./images/chademo.png"
-                      alt=""
-                      className="circle responsive-img"
-                    />
-                    <div className="chip">CHADEMO</div>
-                  </div>
-
-                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
-                    <img
-                      src="./images/combo.png"
-                      alt=""
-                      className="circle responsive-img"
-                    />
-                    <div className="chip">COMBO</div>
-                  </div>
-
-                  <div className="col s3" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
-                    <img
-                      src="./images/tesla.png"
-                      alt=""
-                      className="circle responsive-img"
-                    />
-                    <div className="chip">TESLA</div>
-                  </div>
-
+                  {/* Plug Types */}
+                  <h6 className="center">Plug Type</h6>
                   <br />
-                  <p>
-                    <input
-                      type="submit"
-                      value="Register"
-                      className="btn-large z-depth-0"
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
+                    <img
+                      src="./images/plug-nema.png"
+                      alt=""
+                      className="circle responsive-img hoverable"
                     />
-                    <a href="/login"> {""}Already registered? Login here!</a>
-                  </p>
+                    <div className="chip hide-on-med-and-down">Nema520</div>
+                  </div>
+
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
+                    <img
+                      src="./images/plug-J1772.png"
+                      alt=""
+                      className="circle responsive-img hoverable"
+                    />
+                    <div className="chip hide-on-med-and-down">J1772</div>
+                  </div>
+
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
+                    <img
+                      src="./images/plug-chademo.png"
+                      alt=""
+                      className="circle responsive-img hoverable"
+                    />
+                    <div className="chip hide-on-med-and-down">CHAdeMO</div>
+                  </div>
+
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
+                    <img
+                      src="./images/plug-combo.png"
+                      alt=""
+                      className="circle responsive-img hoverable"
+                    />
+                    <div className="chip hide-on-med-and-down">Combo</div>
+                  </div>
+
+                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
+                    <img
+                      src="./images/plug-tesla.png"
+                      alt=""
+                      className="circle responsive-img hoverable"
+                    />
+                    <div className="chip hide-on-med-and-down">Tesla</div>
+                  </div>
+
+                  <div className="row">
+                    <p className="col s12" >
+                      <input
+                        type="submit"
+                        value="Register"
+                        className="btn left blue-grey lighten-1"
+                      />
+                      <a className="hide-on-med-and-down" href="/login">Registered? Login here!</a>
+                    </p>
+                  </div>
                 </form>
               </div>
               {/* right side content ends here */}

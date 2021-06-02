@@ -11,8 +11,6 @@ import Footer from "./components/Footer/Footer";
 import Account from './components/Account/Account';
 import LandingPage from "./components/LandingPage/LandingPage";
 import Map from "./components/Map/Map";
-import { set } from "mongoose";
-
 
 function App() {
 
@@ -26,24 +24,24 @@ function App() {
 
   return (
     <Router>
-        <Navbar />
-          <Switch>
-            <Route exact path="/login">
-              <Login setUser={setUser}/>
-            </Route>
-            <Route exact path="/signup" >
-              <Signup setUser={setUser}/>
-            </Route>
-            <Route exact path="/account" >
-              <Account user={user}/>
-            </Route>
-            <Route exact path="/landing" component={LandingPage} />
-            <Route exact path="/map">
-              <Map />
-            </Route>
-          </Switch>
-        <Container />
-        <Footer /> 
+      <Navbar />
+      <Switch>
+        <Route exact path="/login">
+          <Login setUser={setUser} />
+        </Route>
+        <Route exact path="/signup" >
+          <Signup setUser={setUser} />
+        </Route>
+        <Route exact path="/account" >
+          <Account user={user} />
+        </Route>
+        <Route exact path="/landing" component={LandingPage} />
+        <Route exact path="/map">
+          <Map />
+        </Route>
+      </Switch>
+      <Container />
+      <Footer />
     </Router>
   )
 }

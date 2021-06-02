@@ -31,28 +31,18 @@ function Login(props) {
     console.log(loggedIN)
     // redirecting user to account page
     if (loggedIN.data) {
-    history.push("/account");
+      history.push("/account");
     }
   };
 
   return (
-    <main>
+    <main >
       <div className="container"> {/* without this container, card would take up the whole page */}
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
               {/* left side content begins here*/}
               <div className="center-align card-login-splash">
-                <div className="wrapper">
-                  <h3 className="">Account</h3>
-                  <a className="btn" href="/login">
-                    Log In
-                  </a>
-                  {" "} {/* Adds whitespace between two buttons*/}
-                  <a className="btn" href="/signup">
-                    Register
-                  </a>
-                </div>
                 <img className="responsive-img"
                   src="./images/charger.jpeg"
                   alt=""
@@ -72,13 +62,12 @@ function Login(props) {
                       onChange={(e) => handleInputChange(e)} />
                     <label htmlFor="password">Password</label>
                   </div>
-                  <a href="/signup">Don't have an account? Register here!</a>
+                  <a href="/signup">No account? Register now!</a>
                   <br />
                   <br />
                   <div>
-                    <input className="btn right" type="submit" value="Log In"
-                      />
-                    <a href="/container" className="btn-flat">Back</a>
+                    <input className="btn right blue-grey lighten-1" type="submit" value="Log In"
+                    />
                   </div>
                 </form>
               </div>
