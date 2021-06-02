@@ -39,6 +39,8 @@ SO that I do not have to register over and over again with a new account
 
 ## Link to Github
 
-## https://github.com/spclk/ChargeBuddy
+
+## [ChargeBuddy](https://github.com/spclk/ChargeBuddy)
+
 
 
