@@ -238,7 +238,7 @@ const Signup = (props) => {
                         value="Register"
                         className="btn left blue-grey lighten-1"
                       />
-                      <a className="hide-on-med-and-down" href="/login">Registered? Login here!</a>
+                      <a className="hide-on-med-and-down logHere" href="/login">Registered? Login here!</a>
                     </p>
                   </div>
                 </form>
