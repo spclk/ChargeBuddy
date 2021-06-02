@@ -186,49 +186,49 @@ const Signup = (props) => {
                   {/* Plug Types */}
                   <h6 className="center">Plug Type</h6>
                   <br />
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
                     <img
                       src="./images/plug-nema.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">Nema520</div>
+                    <div className="chip hide-on-med-and-down logos">Nema520</div>
                   </div>
 
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
                     <img
                       src="./images/plug-J1772.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">J1772</div>
+                    <div className="chip hide-on-med-and-down logos">J1772</div>
                   </div>
 
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
                     <img
                       src="./images/plug-chademo.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">CHAdeMO</div>
+                    <div className="chip hide-on-med-and-down logos">CHAdeMO</div>
                   </div>
 
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
                     <img
                       src="./images/plug-combo.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">Combo</div>
+                    <div className="chip hide-on-med-and-down logos">Combo</div>
                   </div>
 
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
                     <img
                       src="./images/plug-tesla.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">Tesla</div>
+                    <div className="chip hide-on-med-and-down logos">Tesla</div>
                   </div>
 
                   <div className="row">
