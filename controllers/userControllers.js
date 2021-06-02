@@ -16,12 +16,29 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByEmail: function (req, res) {
-    console.log(req.body.email)
+
     db.User.findOne({ email: req.body.email }).then(dbData => {
-      console.log(dbData)
-      res.json(dbData)
+      req.session.save(() => {
+        req.session.user_id = "Hello";
+        req.session.logged_in = true;
+        req.session.user_type = "Hi Adam";
+
+        // dbData.session = req.session;
+        console.log(dbData);
+        const { car, _id, first_name, last_name, zip_code, email, password, userCreated } = dbData
+        let newData = {
+          car, _id, first_name, last_name, zip_code, email, password, userCreated,
+          session: req.session
+        }
+        console.log(newData)
+
+        res.status(200).json(newData);
+        // res.status(200).json(dbData);
+      });
+      // console.log(dbData)
+      // res.json(dbData)
     })
-    .catch(err=> console.log(err))
+      .catch(err => console.log(err))
     // db.User
     //   .findById("60aedf99af17a014b346b11a")
     //   .then(dbModel => console.log(dbModel))
