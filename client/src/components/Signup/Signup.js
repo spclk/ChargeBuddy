@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import AuthContext from '../../utils/authContext'
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Signup.css";
@@ -20,7 +21,9 @@ const Signup = (props) => {
     evPort: ""
   });
 
-  // gathering data from htmlForms
+  const {setAuthData} = useContext(AuthContext)
+
+  // gathering data from forms
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setDetails({
@@ -42,7 +45,7 @@ const Signup = (props) => {
       {
         make: details.make,
         model: details.model,
-        year: details.year,
+        year: parseInt(details.year),
         evPort: details.evPort,
       },
     };
@@ -50,6 +53,10 @@ const Signup = (props) => {
     props.setUser(newUser.data)
     // redirecting user to account page
     if (newUser.data) {
+      setAuthData({
+        isLoggedIn: true,
+        user: newUser.data
+      })
       history.push("/account");
     }
   };
@@ -60,7 +67,7 @@ const Signup = (props) => {
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
-              {/* left side content of Signup htmlForm*/}
+              {/* left side content of Signup form*/}
               <div className="card-content">
                 <form
                   method="post"
@@ -70,7 +77,7 @@ const Signup = (props) => {
                 >
                   <input
                     type="hidden"
-                    name="htmlForm_type"
+                    name="form_type"
                     value="create_customer"
                   />
                   <input type="hidden" name="utf8" value="✓" />
@@ -135,7 +142,7 @@ const Signup = (props) => {
                 </form>
               </div>
 
-              {/* right side content of Signup htmlForm*/}
+              {/* right side content of Signup form*/}
               <div className="card-content">
                 <form
                   method="post"
@@ -186,49 +193,49 @@ const Signup = (props) => {
                   {/* Plug Types */}
                   <h6 className="center">Plug Type</h6>
                   <br />
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
                     <img
                       src="./images/plug-nema.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">Nema520</div>
+                    <div className="chip hide-on-med-and-down logos">Nema520</div>
                   </div>
 
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
                     <img
                       src="./images/plug-J1772.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">J1772</div>
+                    <div className="chip hide-on-med-and-down logos">J1772</div>
                   </div>
 
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
                     <img
                       src="./images/plug-chademo.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">CHAdeMO</div>
+                    <div className="chip hide-on-med-and-down logos">CHAdeMO</div>
                   </div>
 
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
                     <img
                       src="./images/plug-combo.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">Combo</div>
+                    <div className="chip hide-on-med-and-down logos">Combo</div>
                   </div>
 
-                  <div className="col s2" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
+                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
                     <img
                       src="./images/plug-tesla.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down">Tesla</div>
+                    <div className="chip hide-on-med-and-down logos">Tesla</div>
                   </div>
 
                   <div className="row">
@@ -238,7 +245,7 @@ const Signup = (props) => {
                         value="Register"
                         className="btn left blue-grey lighten-1"
                       />
-                      <a className="hide-on-med-and-down" href="/login">Registered? Login here!</a>
+                      <a className="hide-on-med-and-down logHere" href="/login">Registered? Login here!</a>
                     </p>
                   </div>
                 </form>
