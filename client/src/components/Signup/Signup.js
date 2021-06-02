@@ -219,7 +219,7 @@ const Signup = (props) => {
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="truncate hide-on-med-and-down logos center-align">CHAdeMO</div>
+                    <div className="truncate hide-on-med-and-down logos center-align">Chademo</div>
                   </div>
 
                   <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
