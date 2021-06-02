@@ -1,8 +1,13 @@
 .logos {
-text-align: justify;
-margin-right: 14px;
+/* text-align: justify; */
+margin-right: px;
 }
 
 .logHere {
 padding-left: 20px;    
 }
+
+/* .responsive-img {
+    width: 50%;
+} */
+

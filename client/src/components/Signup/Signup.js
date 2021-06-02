@@ -193,13 +193,15 @@ const Signup = (props) => {
                   {/* Plug Types */}
                   <h6 className="center">Plug Type</h6>
                   <br />
+
+                  <div className="row">
                   <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
                     <img
                       src="./images/plug-nema.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down logos">Nema520</div>
+                    <div className="truncate hide-on-med-and-down logos center-align">Nema52</div>
                   </div>
 
                   <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
@@ -208,7 +210,7 @@ const Signup = (props) => {
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down logos">J1772</div>
+                    <div className="truncate hide-on-med-and-down logos center-align">J1772</div>
                   </div>
 
                   <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
@@ -217,7 +219,7 @@ const Signup = (props) => {
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down logos">CHAdeMO</div>
+                    <div className="truncate hide-on-med-and-down logos center-align">CHAdeMO</div>
                   </div>
 
                   <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
@@ -226,7 +228,7 @@ const Signup = (props) => {
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down logos">Combo</div>
+                    <div className="truncate hide-on-med-and-down logos center-align">Combo</div>
                   </div>
 
                   <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
@@ -235,9 +237,9 @@ const Signup = (props) => {
                       alt=""
                       className="circle responsive-img hoverable"
                     />
-                    <div className="chip hide-on-med-and-down logos">Tesla</div>
+                    <div className="truncate hide-on-med-and-down logos center-align">Tesla</div>
                   </div>
-
+                  </div>
                   <div className="row">
                     <p className="col s12" >
                       <input
