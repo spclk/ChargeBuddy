@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
+import AuthContext from './utils/authContext'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from 'axios'
 // importing Materialize.css
 import M from 'materialize-css/dist/js/materialize.min.js';
 // importing Components
@@ -14,7 +16,7 @@ import Map from "./components/Map/Map";
 
 function App() {
 
-  // useEffect is needed for Materialize JavaScript elements to work
+  // useEffect for Materialize JavaScript elements to work
   useEffect(() => {
     M.AutoInit();
   }, []);
@@ -22,8 +24,30 @@ function App() {
   // Data to keep user logged in 
   const [user, setUser] = useState()
 
+  const [authData, setAuthData] = useState({
+    isLoggedIn: false,
+        user: null
+  })
+
+  // hook for pulling up user data
+  useEffect(() => {
+    const getUser = async () => {
+      const currentUser = await axios.get("/api/user")
+      if (currentUser) {
+        setAuthData({
+          isLoggedIn: true,
+          user: currentUser.data
+        })
+      }
+    }
+    getUser()
+  }, [])
+
+
   return (
     <Router>
+      <AuthContext.Provider
+      value = {{authData, setAuthData}}>
       <Navbar />
       <Switch>
         <Route exact path="/login">
@@ -42,6 +66,7 @@ function App() {
       </Switch>
       <Container />
       <Footer />
+      </AuthContext.Provider>
     </Router>
   )
 }
