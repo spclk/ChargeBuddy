@@ -50,6 +50,7 @@ function App() {
       value = {{authData, setAuthData}}>
       <Navbar />
       <Switch>
+        <Route exact path="/" component={LandingPage} />
         <Route exact path="/login">
           <Login setUser={setUser} />
         </Route>
@@ -59,7 +60,6 @@ function App() {
         <Route exact path="/account" >
           <Account user={user} />
         </Route>
-        <Route exact path="/landing" component={LandingPage} />
         <Route exact path="/map">
           <Map />
         </Route>

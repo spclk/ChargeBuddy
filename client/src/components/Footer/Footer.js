@@ -5,7 +5,7 @@ import "./footer.css";
 const Footer = (props) => {
   const history = useHistory();
   const handleClickLanding = () => {
-    history.push("/landing");
+    history.push("/");
   };
   const handleMapClick = () => {
     history.push("/map");
