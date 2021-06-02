@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import AuthContext from '../../utils/authContext'
 
+
 const Account = (props) => {
   useEffect(() => {
     M.AutoInit();
@@ -13,12 +14,22 @@ const Account = (props) => {
   }, [])
 
   const {authData} = useContext(AuthContext)
+  console.log(authData)
 
-  // const user = props.user
+  
   const user = authData.user
-
+  
+  // redirecting if not a registered user
+  const [redirect, setRedirect] = React.useState(false)
+    useEffect(() => {
+      if(authData.isLoggedIn!==true) {
+        setRedirect(true)
+      }
+    },[authData])
+    console.log(redirect)
+    
   return (
-    !!user ?
+    // !redirect ?
       <div>
         <main>
           <div className="section container">
@@ -93,7 +104,7 @@ const Account = (props) => {
           <a href="/map" className="waves-effect waves-light btn-large blue-grey lighten-1">GO TO MAP</a>
         </div>
       </div>
-      : <Redirect to="/login" />
+      // : <Redirect to="/login" />
   );
 };
 

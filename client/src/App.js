@@ -16,7 +16,7 @@ import Map from "./components/Map/Map";
 
 function App() {
 
-  // useEffect is needed for Materialize JavaScript elements to work
+  // useEffect for Materialize JavaScript elements to work
   useEffect(() => {
     M.AutoInit();
   }, []);
