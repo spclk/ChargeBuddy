@@ -37,13 +37,16 @@ function Login(props) {
 
   return (
     <main >
-      <div className="container"> {/* without this container, card would take up the whole page */}
+      <div className="cnr container"> {/* without this container, card would take up the whole page */}
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
               {/* left side content begins here*/}
               <div className="center-align card-login-splash">
-                <img className="responsive-img"
+              <div className="wrapper">
+                  <h5 className="lime-text text-darken-2">Account Sign In</h5>
+                </div>
+                <img className="img"
                   src="./images/charger.jpeg"
                   alt=""
                 />
@@ -62,11 +65,11 @@ function Login(props) {
                       onChange={(e) => handleInputChange(e)} />
                     <label htmlFor="password">Password</label>
                   </div>
-                  <a href="/signup">No account? Register now!</a>
+                  <a href="/signup">No account? Register here!</a>
                   <br />
                   <br />
                   <div>
-                    <input className="btn right blue-grey lighten-1" type="submit" value="Log In"
+                    <input className="btn right lime darken-2" type="submit" value="Log In"
                     />
                   </div>
                 </form>

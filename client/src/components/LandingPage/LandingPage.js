@@ -1,5 +1,4 @@
 import React from "react";
-import "./LandingPage.css";
 import classes from "./BackgroundVideo.module.css";
 
 const LandingPage = () => {
