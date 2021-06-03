@@ -40,16 +40,16 @@
       font-weight: normal;
       margin-top: 30px;
       color: white;
-      border: #d37912 2px solid;
+      border: #af6022 2px solid;
       padding: 15px 15px;
       background-color: hsla(0, 0%, 0%, 0);
-      background-color: #d37912;
+      background-color: #af6022;
       font-size: 2rem;
       border-radius: 7px;
   }
   .SubContent button:hover {
       background-color: hsla(0, 0%, 0%, 0);
-      color: #d37912;
+      color: #af6022;
   }
   .SubContent a {
     color: white;
