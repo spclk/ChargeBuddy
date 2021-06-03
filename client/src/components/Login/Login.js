@@ -37,7 +37,7 @@ function Login(props) {
 
   return (
     <main >
-      <div className="container"> {/* without this container, card would take up the whole page */}
+      <div className="cnr container"> {/* without this container, card would take up the whole page */}
         <div className="row">
           <div className="col s12">
             <div className="card card-login">

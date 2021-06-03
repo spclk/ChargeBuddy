@@ -63,7 +63,7 @@ const Signup = (props) => {
 
   return (
     <main>
-      <div className="container">
+      <div className="cntr container">
         <div className="row">
           <div className="col s12">
             <div className="card card-login">
