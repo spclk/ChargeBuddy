@@ -1,8 +1,8 @@
 /* Google fonts */
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&family=Montserrat:wght@500&display=swap');
 
 h5{
-    font-family: 'Josefin Sans', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* allows items in the container to be ordered side-by-side*/
