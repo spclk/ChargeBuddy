@@ -5,7 +5,7 @@ import "./footer.css";
 const Footer = (props) => {
   const history = useHistory();
   const handleClickLanding = () => {
-    history.push("/landing");
+    history.push("/");
   };
   const handleMapClick = () => {
     history.push("/map");
@@ -14,7 +14,7 @@ const Footer = (props) => {
    props.user ? history.push("/account") : history.push("/login")
   };
   return (
-    <footer className="page-footer card-content valign center grey darken-3">
+    <footer className="page-footer card-content valign center">
       <div className="nav-content container" >
         <ul className="tabs tabs-transparent">
           <li className="tab " onClick={handleClickLanding}>
@@ -43,7 +43,7 @@ const Footer = (props) => {
         </ul>
       </div>
       <div className="footer-copyright">
-        <div className="container">© 2021 Copyright Text</div>
+        <div className="container">© 2021 ChargeBuddy</div>
       </div>
     </footer>
   );

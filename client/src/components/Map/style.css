@@ -23,3 +23,21 @@
   margin-left: 12px;
   margin-bottom: 15px;
 }
+
+/* Marker & Pop Up Styling */
+.marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+/* Marker & Pop Up Styling */

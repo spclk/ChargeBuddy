@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import AuthContext from '../../utils/authContext'
 
@@ -18,6 +18,7 @@ const Account = (props) => {
 
   
   const user = authData.user
+  console.log(user)
   
   // redirecting if not a registered user
   const [redirect, setRedirect] = React.useState(false)
@@ -87,12 +88,6 @@ const Account = (props) => {
                       <span>{user.car.evPort}</span>
                     </div>
                   </li>
-                  <li>
-                    <div className="collapsible-header">Charging History</div>
-                    <div className="collapsible-body">
-                      <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -101,10 +96,11 @@ const Account = (props) => {
         <div className="center-align">
           <p>Now that you're part of the ChargeBuddy community, </p>
           <p>start adding prices and tips on the Map page</p>
-          <a href="/map" className="waves-effect waves-light btn-large blue-grey lighten-1">GO TO MAP</a>
+          <a href="/map" className="waves-effect waves-light btn-large lime darken-2">GO TO MAP</a>
         </div>
       </div>
       // : <Redirect to="/login" />
+
   );
 };
 

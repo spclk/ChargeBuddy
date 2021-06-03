@@ -4,7 +4,7 @@ const withAuth = require ('../../utils/auth')
 
 // Matches with "/api/user"
 router
-    .route("/", withAuth).get(userController.findCurrent)
+    .route("/").get(userController.findCurrent)
     .post(userController.create);
 
 router

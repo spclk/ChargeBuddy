@@ -1,43 +1,47 @@
 import React from 'react';
 import "./Container.css";
 import { Component } from 'react';
-import API from '../../utils/API';
+// import API from '../../utils/API';
 // import { Link } from "react-router-dom";
 
 
 
 class Container extends Component {
 
-    componentDidMount() {
-        this.getChargingStations();
+    // componentDidMount() {
+    //     this.getChargingStations();
 
-    }
+    // }
 
-    getChargingStations = () => {
-        API.getChargingStations().then(res => {
-            console.log("full response", res.data);
+    // getChargingStations = () => {
+    //     API.getChargingStations().then(res => {
+    //         console.log("full response", res.data);
 
-            let features = res.data.features;
-            for (let i = 0; i < features.length; i++) {
-                console.log(features[i]);
-                //extracting coordinates from API
-                let coordinates0 = features[i].geometry.coordinates[0];
-                console.log(coordinates0);
-                //extracting charging port connector types from API
-                let evPorts = features[i].properties.ev_connector_types;
-                console.log(evPorts)
-                //extracting city from API
-                let city = features[i].properties.city;
-                console.log(city)
-                //extracting state from API
-                let state = features[i].properties.state;
-                console.log(state)
-                //extracting street address from API
-                let address = features[i].properties.street_address;
-                console.log(address)
-            }
-        })
-    }
+    //         let features = res.data.features;
+    //         for (let i = 0; i < features.length; i++) {
+    //             console.log(features[i]);
+    //             //extracting data from API
+    //             let lng = features[i].geometry.coordinates[0];
+    //             let lat = features[i].geometry.coordinates[1];
+    //             let portType = features[i].properties.ev_connector_types;
+    //             let name = features[i].properties.station_name;
+    //             let city = features[i].properties.city;
+    //             let state = features[i].properties.state;
+    //             let address = features[i].properties.street_address;
+    //             let zip = features[i].properties.zip;
+    //             console.log(`Longitude: ${lng}, Latitude: ${lat}`);
+    //             console.log(`Type(s) of charging ports: ${portType}`);
+    //             console.log(
+    //                 `
+    //                 ${name}
+    //                 ${address}
+    //                 ${city}, ${state} ${zip}
+    //                 `
+    //             )
+    //             console.log(`-----------------------`);
+    //         }
+    //     })
+    // }
 
     render() {
         return (
