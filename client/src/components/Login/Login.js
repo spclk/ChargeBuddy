@@ -43,7 +43,10 @@ function Login(props) {
             <div className="card card-login">
               {/* left side content begins here*/}
               <div className="center-align card-login-splash">
-                <img className="responsive-img"
+              <div className="wrapper">
+                  <h5>Account Sign In</h5>
+                </div>
+                <img className="img"
                   src="./images/charger.jpeg"
                   alt=""
                 />
@@ -62,7 +65,7 @@ function Login(props) {
                       onChange={(e) => handleInputChange(e)} />
                     <label htmlFor="password">Password</label>
                   </div>
-                  <a href="/signup">No account? Register now!</a>
+                  <a href="/signup">No account? Register here!</a>
                   <br />
                   <br />
                   <div>
