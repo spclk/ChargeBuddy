@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import API from '../../utils/API';
 import "./style.css"
 import ReactMapGL, {GeolocateControl, Marker, Popup} from 'react-map-gl'
+import StationInfo from "../StationInfo/StationInfo";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl'; // eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default; // eslint-disable-line import/no-webpack-loader-syntax
@@ -28,7 +29,7 @@ export default function Map() {
       zoom: 12
     });
     const [markers, setMarkers] = useState([]);
-    const [showPopup, togglePopup] = useState(false);
+    const [popupInfo, setPopupInfo] = useState(null);
     
     // The user must first allow the browser to use location services
     // const getLocation = () => {
@@ -89,6 +90,8 @@ export default function Map() {
             let geojson = [];
             // Create empty array to store charging station coordinates
             let newMarkers = [];
+            // Create empty array to store station info
+            let newStationInfo = [];
             for (let i = 0; i < features.length; i++) {
                 //extracting data from API
                 let lng = features[i].geometry.coordinates[0];
@@ -126,18 +129,34 @@ export default function Map() {
                   geojson[i].features.forEach(function (marker) {
                       // make a marker for each feature and add it to the map
                       console.log(marker.geometry.coordinates);
+                      // console.log(`
+                      // Station Name: ${marker.properties.name}
+                      // ${marker.properties.address}
+                      // ${marker.properties.city}, ${marker.properties.state} ${marker.properties.zip}
+                      // Port Types: ${marker.properties.portTypes}
+                      // `);
                       newMarkers.push(marker.geometry.coordinates);
+                      newStationInfo.push({
+                          name: marker.properties.name,
+                          address: marker.properties.address,
+                          city: marker.properties.city,
+                          state: marker.properties.state,
+                          zip: marker.properties.zip,
+                          portTypes: marker.properties.portTypes
+                      })
                   });
               }
-              setMarkers(newMarkers)
+              setMarkers(newMarkers);
+              // setPopupInfo(newStationInfo);
+              console.log(newStationInfo)
         })
     }, []);
 
     return (
         <div>
-            <div className="sidebar">
+            {/* <div className="sidebar">
                 Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} | Status: {status}
-            </div>
+            </div> */}
             {/* <button onClick={getLocation} className="waves-effect waves-light btn"><i className="material-icons left">location_searching</i> Get Location</button> */}
             {/* <div ref={mapContainer} className="map-container" /> */}
             <ReactMapGL mapboxApiAccessToken={accessToken} {...viewport} width="100vw" height="100vh" onViewportChange={setViewport}>
@@ -150,9 +169,18 @@ export default function Map() {
               />
               {markers.map((marker) => (
                 <Marker latitude={marker[1]} longitude={marker[0]} key={marker[0] + marker[1]}>
-                  <img src="/images/chargeIcon.png" className="marker"/>
+                  <img src="/images/chargeIcon.png" className="marker" onClick={setPopupInfo}/>
                 </ Marker>
               ))}
+              {popupInfo && <Popup
+                    tipSize={5}
+                    latitude={popupInfo.latitude}
+                    longitude={popupInfo.longitude}
+                    closeOnClick={false}
+                    onClose={setPopupInfo}
+                    anchor="top" >
+                    <StationInfo info={popupInfo} />
+              </Popup>}
             </ReactMapGL>
         </div>
     );
