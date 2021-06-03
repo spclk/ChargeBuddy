@@ -30,6 +30,7 @@
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.12.9",
     "react-axios": "^2.0.5",
+    "react-map-gl": "^6.1.15",
     "react-router-dom": "^5.2.0"
   }
 }
