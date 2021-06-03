@@ -245,7 +245,7 @@ const Signup = (props) => {
                       <input
                         type="submit"
                         value="signup"
-                        className="btn left blue-grey lighten-1"
+                        className="btn left lime darken-2"
                       />
                       <a className="hide-on-med-and-down logHere" href="/login">Registered? Login here!</a>
                     </p>

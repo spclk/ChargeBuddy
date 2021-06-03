@@ -44,7 +44,7 @@ function Login(props) {
               {/* left side content begins here*/}
               <div className="center-align card-login-splash">
               <div className="wrapper">
-                  <h5>Account Sign In</h5>
+                  <h5 className="lime-text text-darken-2">Account Sign In</h5>
                 </div>
                 <img className="img"
                   src="./images/charger.jpeg"
@@ -69,7 +69,7 @@ function Login(props) {
                   <br />
                   <br />
                   <div>
-                    <input className="btn right blue-grey lighten-1" type="submit" value="Log In"
+                    <input className="btn right lime darken-2" type="submit" value="Log In"
                     />
                   </div>
                 </form>

@@ -43,7 +43,7 @@ const Footer = (props) => {
         </ul>
       </div>
       <div className="footer-copyright">
-        <div className="container">© 2021 Copyright Text</div>
+        <div className="container">© 2021 ChargeBuddy</div>
       </div>
     </footer>
   );

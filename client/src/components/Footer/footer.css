@@ -24,7 +24,7 @@ footer {
 
 /*Custom Text Color While Active*/
 .tabs .tab a:focus.active {
-  color: black;
+  color: #afb42b;
 
 }
 
