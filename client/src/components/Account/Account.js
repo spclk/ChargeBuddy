@@ -18,6 +18,7 @@ const Account = (props) => {
 
   
   const user = authData.user
+  console.log(user)
   
   // redirecting if not a registered user
   const [redirect, setRedirect] = React.useState(false)
@@ -99,6 +100,7 @@ const Account = (props) => {
         </div>
       </div>
       // : <Redirect to="/login" />
+
   );
 };
 

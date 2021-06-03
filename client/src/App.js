@@ -19,6 +19,7 @@ function App() {
 
   // useEffect for Materialize JavaScript elements to work
   useEffect(() => {
+    console.log("useEffectStyling")
     M.AutoInit();
   }, []);
 
@@ -32,9 +33,11 @@ function App() {
 
   // hook for pulling up user data
   useEffect(() => {
+    console.log("useEffect")
     const getUser = async () => {
       const currentUser = await axios.get("/api/user")
-      if (currentUser) {
+      console.log(currentUser)
+      if (currentUser.data) {
         setAuthData({
           isLoggedIn: true,
           user: currentUser.data
@@ -48,7 +51,7 @@ function App() {
   return (
     <Router>
       <AuthContext.Provider
-      value = {{authData, setAuthData}}>
+      value = {{authData: authData, setAuthData: setAuthData}}>
       <Navbar />
       <Switch>
         <Route exact path="/" component={LandingPage} />
@@ -59,7 +62,7 @@ function App() {
           <Signup setUser={setUser} />
         </Route>
         <Route exact path="/account" >
-          <Account user={user} />
+          <Account user={authData} />
         </Route>
         <Route exact path="/map">
           <Map />
