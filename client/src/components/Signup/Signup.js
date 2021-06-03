@@ -195,14 +195,14 @@ const Signup = (props) => {
                   <br />
 
                   <div className="row">
-                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
+                  <label className="col s2 logos"  onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
                     <img
                       src="./images/plug-nema.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
                     <div className="truncate hide-on-med-and-down logos center-align">Nema52</div>
-                  </div>
+                  </label>
 
                   <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
                     <img
@@ -241,10 +241,10 @@ const Signup = (props) => {
                   </div>
                   </div>
                   <div className="row">
-                    <p className="col s12" >
+                    <p className="" >
                       <input
                         type="submit"
-                        value="Register"
+                        value="signup"
                         className="btn left blue-grey lighten-1"
                       />
                       <a className="hide-on-med-and-down logHere" href="/login">Registered? Login here!</a>
