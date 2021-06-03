@@ -31,6 +31,7 @@ const Account = (props) => {
     
   return (
     // !redirect ?
+    user && 
       <div>
         <main>
           <div className="section container">

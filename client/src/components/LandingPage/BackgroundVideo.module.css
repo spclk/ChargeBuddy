@@ -1,10 +1,14 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@100&display=swap');
+
 .Container {
     position: relative;
     /* min-height: 300px;
     max-height: 800px; */
     overflow: hidden;
     margin-bottom: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 /* Style the video: 100% width and height to cover the entire window */
@@ -37,7 +41,7 @@
       font-size: 1.3rem;
   }
   .SubContent button {
-      font-weight: normal;
+      font-weight: bold;
       margin-top: 30px;
       color: white;
       border: #af6022 2px solid;
@@ -46,6 +50,7 @@
       background-color: #af6022;
       font-size: 2rem;
       border-radius: 7px;
+      font-family: 'Montserrat', sans-serif;
   }
   .SubContent button:hover {
       background-color: hsla(0, 0%, 0%, 0);
