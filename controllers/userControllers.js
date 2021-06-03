@@ -1,5 +1,6 @@
 const db = require("../models");
 
+
 // Defining methods for the userController
 module.exports = {
   findAll: function (req, res) {
@@ -15,11 +16,20 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
+  // method to pull up a user
+  findCurrent: function (req, res){
+    db.User
+    .findById(req.session.user_id)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+
   findByEmail: function (req, res) {
 
     db.User.findOne({ email: req.body.email }).then(dbData => {
       req.session.save(() => {
-        req.session.user_id = "Hello";
+        req.session.user_id = dbData._id;
         req.session.logged_in = true;
         req.session.user_type = "Hi Adam";
 

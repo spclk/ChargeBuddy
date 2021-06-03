@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userControllers");
+const withAuth = require ('../../utils/auth')
 
 // Matches with "/api/user"
 router
-    .route("/").get(userController.findAll)
+    .route("/", withAuth).get(userController.findCurrent)
     .post(userController.create);
 
 router
