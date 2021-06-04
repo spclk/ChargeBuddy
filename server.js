@@ -5,6 +5,8 @@ const routes = require("./routes");
 const path = require("path");
 const session = require("express-session");
 
+require("dotenv").config();
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -34,6 +36,7 @@ mongoose.connect(
   }
 );
 
-app.listen(PORT, () => {
+// Removed port and replaced with process.env.port
+app.listen( process.env.PORT || PORT , () => {
   console.log(`App running on port ${PORT}!`);
 });
