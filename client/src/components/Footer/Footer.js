@@ -42,6 +42,12 @@ const Footer = (props) => {
           </li>
         </ul>
       </div>
+<<<<<<< HEAD
+=======
+      {/* <div className="footer-copyright">
+        <div className="container">© 2021 ChargeBuddy</div>
+      </div> */}
+>>>>>>> 3564270d08e4cbcf07e4f26b38423021d15f64e6
     </footer>
   );
 };
