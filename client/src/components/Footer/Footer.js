@@ -14,7 +14,7 @@ const Footer = (props) => {
    props.user ? history.push("/account") : history.push("/login")
   };
   return (
-    <footer className="page-footer card-content valign center">
+    <footer className="page-footer card-content valign center ">
       <div className="nav-content container" >
         <ul className="tabs tabs-transparent">
           <li className="tab " onClick={handleClickLanding}>
