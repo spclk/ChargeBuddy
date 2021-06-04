@@ -42,6 +42,6 @@ mongoose.connect(
 );
 
 // Removed port and replaced with process.env.port
-app.listen( process.env.PORT || PORT , () => {
+app.listen( process.env.PORT || PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
