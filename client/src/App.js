@@ -19,7 +19,6 @@ function App() {
 
   // useEffect for Materialize JavaScript elements to work
   useEffect(() => {
-    console.log("useEffectStyling")
     M.AutoInit();
   }, []);
 
@@ -33,10 +32,8 @@ function App() {
 
   // hook for pulling up user data
   useEffect(() => {
-    console.log("useEffect")
     const getUser = async () => {
       const currentUser = await axios.get("/api/user")
-      console.log(currentUser)
       if (currentUser.data) {
         setAuthData({
           isLoggedIn: true,
