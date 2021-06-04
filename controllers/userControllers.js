@@ -18,11 +18,11 @@ module.exports = {
   },
 
   // method to pull up a user
-  findCurrent: function (req, res){
+  findCurrent: function (req, res) {
     db.User
-    .findById(req.session.user_id)
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err));
+      .findById(req.session.user_id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
 
   findByEmail: function (req, res) {

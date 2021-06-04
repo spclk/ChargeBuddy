@@ -21,6 +21,7 @@ const sess = {
 app.use(session(sess));
 
 app.use(express.urlencoded({ extended: true }));
+<<<<<<< HEAD
 app.use(express.json());
 
 app.use(express.static("public"));
@@ -30,6 +31,9 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, './client/build')));
 }
 
+=======
+app.use(express.json());app.use(routes);
+>>>>>>> caab5f61eb7ebedaee891250a270e0166710e6e0
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/chargebuddy_db",
@@ -41,10 +45,17 @@ mongoose.connect(
   }
 );
 
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 
 // Removed port and replaced with process.env.port
 app.listen(process.env.PORT || PORT, () => {

@@ -21,7 +21,7 @@ const Signup = (props) => {
     evPort: ""
   });
 
-  const {setAuthData} = useContext(AuthContext)
+  const { setAuthData } = useContext(AuthContext)
 
   // gathering data from forms
   const handleInputChange = (event) => {
@@ -50,6 +50,7 @@ const Signup = (props) => {
       },
     };
     const newUser = await axios.post("/api/user", user);
+    console.log(newUser.data)
     props.setUser(newUser.data)
     // redirecting user to account page
     if (newUser.data) {
@@ -195,50 +196,50 @@ const Signup = (props) => {
                   <br />
 
                   <div className="row">
-                  <div className="col s2 logos"  onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
-                    <img
-                      src="./images/plug-nema.png"
-                      alt=""
-                      className="circle responsive-img hoverable"
-                    />
-                    <div className="truncate hide-on-med-and-down logos center-align">Nema52</div>
-                  </div>
+                    <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
+                      <img
+                        src="./images/plug-nema.png"
+                        alt=""
+                        className="circle responsive-img hoverable"
+                      />
+                      <div className="truncate hide-on-med-and-down logos center-align">Nema52</div>
+                    </div>
 
-                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
-                    <img
-                      src="./images/plug-J1772.png"
-                      alt=""
-                      className="circle responsive-img hoverable"
-                    />
-                    <div className="truncate hide-on-med-and-down logos center-align">J1772</div>
-                  </div>
+                    <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
+                      <img
+                        src="./images/plug-J1772.png"
+                        alt=""
+                        className="circle responsive-img hoverable"
+                      />
+                      <div className="truncate hide-on-med-and-down logos center-align">J1772</div>
+                    </div>
 
-                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
-                    <img
-                      src="./images/plug-chademo.png"
-                      alt=""
-                      className="circle responsive-img hoverable"
-                    />
-                    <div className="truncate hide-on-med-and-down logos center-align">Chademo</div>
-                  </div>
+                    <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "CHADEMO" })}>
+                      <img
+                        src="./images/plug-chademo.png"
+                        alt=""
+                        className="circle responsive-img hoverable"
+                      />
+                      <div className="truncate hide-on-med-and-down logos center-align">Chademo</div>
+                    </div>
 
-                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
-                    <img
-                      src="./images/plug-combo.png"
-                      alt=""
-                      className="circle responsive-img hoverable"
-                    />
-                    <div className="truncate hide-on-med-and-down logos center-align">Combo</div>
-                  </div>
+                    <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "COMBO" })}>
+                      <img
+                        src="./images/plug-combo.png"
+                        alt=""
+                        className="circle responsive-img hoverable"
+                      />
+                      <div className="truncate hide-on-med-and-down logos center-align">Combo</div>
+                    </div>
 
-                  <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
-                    <img
-                      src="./images/plug-tesla.png"
-                      alt=""
-                      className="circle responsive-img hoverable"
-                    />
-                    <div className="truncate hide-on-med-and-down logos center-align">Tesla</div>
-                  </div>
+                    <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "TESLA" })}>
+                      <img
+                        src="./images/plug-tesla.png"
+                        alt=""
+                        className="circle responsive-img hoverable"
+                      />
+                      <div className="truncate hide-on-med-and-down logos center-align">Tesla</div>
+                    </div>
                   </div>
                   <div className="row">
                     <p className="" >
