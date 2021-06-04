@@ -29,6 +29,7 @@ export default function Map() {
       zoom: 12
     });
     const [markers, setMarkers] = useState([]);
+    const [stations, setStations] = useState([]);
     const [popupInfo, setPopupInfo] = useState(null);
     
     // The user must first allow the browser to use location services
@@ -128,27 +129,37 @@ export default function Map() {
               for (var i = 0; i < geojson.length; i++){
                   geojson[i].features.forEach(function (marker) {
                       // make a marker for each feature and add it to the map
-                      console.log(marker.geometry.coordinates);
+                      // console.log(marker.geometry.coordinates);
                       // console.log(`
                       // Station Name: ${marker.properties.name}
                       // ${marker.properties.address}
                       // ${marker.properties.city}, ${marker.properties.state} ${marker.properties.zip}
                       // Port Types: ${marker.properties.portTypes}
                       // `);
-                      newMarkers.push(marker.geometry.coordinates);
-                      newStationInfo.push({
-                          name: marker.properties.name,
-                          address: marker.properties.address,
-                          city: marker.properties.city,
-                          state: marker.properties.state,
-                          zip: marker.properties.zip,
-                          portTypes: marker.properties.portTypes
-                      })
+                      newMarkers.push({
+                        coordinates: marker.geometry.coordinates,
+                        name: marker.properties.name,
+                        address: marker.properties.address,
+                        city: marker.properties.city,
+                        state: marker.properties.state,
+                        zip: marker.properties.zip,
+                        portTypes: marker.properties.portTypes
+                    });
+                      // newStationInfo.push({
+                      //     name: marker.properties.name,
+                      //     address: marker.properties.address,
+                      //     city: marker.properties.city,
+                      //     state: marker.properties.state,
+                      //     zip: marker.properties.zip,
+                      //     portTypes: marker.properties.portTypes
+                      // })
                   });
               }
+              console.log(newMarkers);
               setMarkers(newMarkers);
               // setPopupInfo(newStationInfo);
-              console.log(newStationInfo)
+              // console.log(newStationInfo);
+              // setStations(newStationInfo);
         })
     }, []);
 
@@ -168,14 +179,14 @@ export default function Map() {
                 auto
               />
               {markers.map((marker) => (
-                <Marker latitude={marker[1]} longitude={marker[0]} key={marker[0] + marker[1]}>
-                  <img src="/images/chargeIcon.png" className="marker" onClick={setPopupInfo}/>
+                <Marker latitude={marker.coordinates[1]} longitude={marker.coordinates[0]} key={marker.coordinates[0] + marker.coordinates[1]} onClick={e => {e.preventDefault(); setPopupInfo(marker)}}>
+                  <img src="/images/chargeIcon.png" className="marker" />
                 </ Marker>
               ))}
               {popupInfo && <Popup
                     tipSize={5}
-                    latitude={popupInfo.latitude}
-                    longitude={popupInfo.longitude}
+                    latitude={popupInfo.coordinates[1]}
+                    longitude={popupInfo.coordinates[0]}
                     closeOnClick={false}
                     onClose={setPopupInfo}
                     anchor="top" >
