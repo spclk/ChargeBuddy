@@ -42,9 +42,9 @@ const Footer = (props) => {
           </li>
         </ul>
       </div>
-      <div className="footer-copyright">
+      {/* <div className="footer-copyright">
         <div className="container">© 2021 ChargeBuddy</div>
-      </div>
+      </div> */}
     </footer>
   );
 };
