@@ -27,7 +27,7 @@ app.use(express.static("public"));
 app.use(routes);
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/chargebuddy_db",
+  process.env.MONGODB_URI || "mongodb+srv://chargebuddy:chargeBuddy@chargebuddy.7aiso.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" || "mongodb://localhost/chargebuddy_db",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
