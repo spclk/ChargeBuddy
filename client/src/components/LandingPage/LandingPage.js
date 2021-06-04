@@ -43,7 +43,6 @@ const LandingPage = () => {
             <p className="container">
               Once you create an account with us Charge Buddy will display all available Charging Stations in your vicinity.   Never be the punchline at Thanksgiving again.
             </p>
-            <br />
             <p> Charge Buddy is not the friend you want but the friend you need!</p>
             <button type="button">
               <a href="/map">START NOW</a>

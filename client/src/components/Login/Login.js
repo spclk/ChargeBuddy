@@ -32,7 +32,6 @@ function Login(props) {
     const loggedIN = await axios.post("/api/user/login", details);
     props.setUser(loggedIN.data)
     setAuthData({isLoggedIn: true, user: loggedIN.data})
-    console.log(loggedIN)
     // redirecting user to account page
     if (loggedIN.data) {
       history.push("/account");
