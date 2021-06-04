@@ -23,8 +23,8 @@ const LandingPage = () => {
               developed a sinking feeling. Your middle aged road trip will soon be a
               tragedy that others joke about at your next party.
             </p>
-            <br />
             <p>It doesn't have to be this way!</p>
+            <i className="large material-icons">keyboard_arrow_down</i>
           </div>
         </div>
       </div>

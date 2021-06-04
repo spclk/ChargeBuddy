@@ -10,7 +10,7 @@ function StationInfo(props) {
 
     return (
         <div>
-
+            
         {authData.isLoggedIn ?
         <h5>user is logged in</h5>
         : <h5>user is not logged in</h5>

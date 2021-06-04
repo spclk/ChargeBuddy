@@ -195,14 +195,14 @@ const Signup = (props) => {
                   <br />
 
                   <div className="row">
-                  <label className="col s2 logos"  onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
+                  <div className="col s2 logos"  onClick={(event) => setDetails({ ...details, evPort: "NEMA520" })}>
                     <img
                       src="./images/plug-nema.png"
                       alt=""
                       className="circle responsive-img hoverable"
                     />
                     <div className="truncate hide-on-med-and-down logos center-align">Nema52</div>
-                  </label>
+                  </div>
 
                   <div className="col s2 logos" onClick={(event) => setDetails({ ...details, evPort: "J1772" })}>
                     <img
