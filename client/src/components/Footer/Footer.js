@@ -8,7 +8,7 @@ const Footer = (props) => {
     history.push("/");
   };
   const handleMapClick = () => {
-    history.push("/map");
+    props.user ? history.push("/map") : history.push("/login")
   };
   const handleCarClick = () => {
    props.user ? history.push("/account") : history.push("/login")
