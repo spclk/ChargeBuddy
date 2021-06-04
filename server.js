@@ -5,6 +5,8 @@ const routes = require("./routes");
 const path = require("path");
 const session = require("express-session");
 
+require("dotenv").config();
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -24,13 +26,13 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(routes);
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'));
+// }
 
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/chargebuddy_db",
+  process.env.MONGODB_URI || "mongodb+srv://chargebuddy:chargeBuddy@chargebuddy.7aiso.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" || "mongodb://localhost/chargebuddy_db",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -39,7 +41,7 @@ mongoose.connect(
   }
 );
 
-
-app.listen(PORT, () => {
+// Removed port and replaced with process.env.port
+app.listen( process.env.PORT || PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
