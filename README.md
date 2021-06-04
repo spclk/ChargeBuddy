@@ -24,14 +24,15 @@
 
 ## Description
 
-This application provides geoloaction for the user location as well as locate charging stations for Electric Vehicles nearby. The user Registers their information with the application including their cars charging port and it is stored in a database. When they log back in that information and all nearby charging stations compatible with their respective charging port is displayed in a map on their homepage. They will also be able to update and add new cars to the database.
+This application provides geoloaction for the user location as well as locate charging stations for Electric Vehicles nearby. The user Registers their information with the application including their cars charging port and it is stored in a database. When they log back in that information and all nearby charging stations are displayed in a map on their homepage.
 
 ---
 
-## Table of Contents 
-  * [User Story](#user-story)
-  * [Links](#links)
-  * [Demo](#demo)
+## Table of Contents
+
+- [User Story](#user-story)
+- [Links](#links)
+- [Demo](#demo)
 
 ## User Story
 
@@ -53,19 +54,14 @@ SO that I do not have to register over and over again with a new account
 
 [GitHub](https://github.com/spclk/ChargeBuddy)
 
-
 ## Demo
 
 ![screenshot](./client/public/images/screenshot-home.png)
 
-
 ![screenshot](./client/public/images/screenshot-home2.png)
-
 
 ![screenshot](./client/public/images/screenshot-map.png)
 
-
 ![screenshot](./client/public/images/screenshot-signup.png)
-
 
 ![screenshot](./client/public/images/screenshot-account.png)
