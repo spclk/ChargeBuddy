@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import AuthContext from "../../utils/authContext"
 import axios from "axios";
 import "./Login.css";
 
@@ -12,6 +13,8 @@ function Login(props) {
     email: "",
     password: "",
   });
+
+  const {setAuthData} = useContext(AuthContext)
 
   // gathering data from forms
   const handleInputChange = (event) => {
@@ -28,6 +31,7 @@ function Login(props) {
     //hit the server with a post request containing the email and password
     const loggedIN = await axios.post("/api/user/login", details);
     props.setUser(loggedIN.data)
+    setAuthData({isLoggedIn: true, user: loggedIN.data})
     console.log(loggedIN)
     // redirecting user to account page
     if (loggedIN.data) {

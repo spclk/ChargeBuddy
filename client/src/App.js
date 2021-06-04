@@ -69,7 +69,7 @@ function App() {
         </Route>
       </Switch>
       <Container />
-      <Footer />
+      <Footer user={authData.user} />
       </AuthContext.Provider>
     </Router>
   )
