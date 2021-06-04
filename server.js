@@ -27,7 +27,7 @@ app.use(express.static("public"));
 app.use(routes);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static(path.join(__dirname, './client/build')));
 }
 
 
@@ -42,12 +42,9 @@ mongoose.connect(
 );
 
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-
-
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 // Removed port and replaced with process.env.port
 app.listen(process.env.PORT || PORT, () => {
