@@ -47,9 +47,7 @@ function Login(props) {
             <div className="card card-login">
               {/* left side content begins here*/}
               <div className="center-align card-login-splash">
-              <div className="wrapper">
-                  <h5 className="lime-text text-darken-2">Account Sign In</h5>
-                </div>
+
                 <img className="img"
                   src="./images/charger.jpeg"
                   alt=""
