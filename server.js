@@ -42,9 +42,9 @@ mongoose.connect(
 );
 
 
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 // Removed port and replaced with process.env.port
 app.listen( process.env.PORT || PORT, () => {
