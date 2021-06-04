@@ -1,5 +1,5 @@
 .map-container {
-  height: 600px;
+  height: 400px;
 }
 
 .sidebar {
@@ -13,6 +13,7 @@
   left: 0;
   margin: 12px;
   border-radius: 4px;
+  text-align: center;
 }
 
 .mapboxgl-ctrl-attrib-button {
@@ -33,7 +34,7 @@
 }
 
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 300px;
 }
 
 .mapboxgl-popup-content {
