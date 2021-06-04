@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import API from '../../utils/API';
+import Login from "../Login/Login";
+import Signup from "../Signup/Signup";
 import "./style.css"
 import ReactMapGL, {GeolocateControl, Marker, Popup} from 'react-map-gl'
 import StationInfo from "../StationInfo/StationInfo";
@@ -193,6 +195,7 @@ export default function Map() {
                     <StationInfo info={popupInfo} />
               </Popup>}
             </ReactMapGL>
+            {/* <Login/> */}
         </div>
     );
 }
