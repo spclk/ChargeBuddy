@@ -21,19 +21,7 @@ const sess = {
 app.use(session(sess));
 
 app.use(express.urlencoded({ extended: true }));
-<<<<<<< HEAD
-app.use(express.json());
-
-app.use(express.static("public"));
-app.use(routes);
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, './client/build')));
-}
-
-=======
 app.use(express.json());app.use(routes);
->>>>>>> caab5f61eb7ebedaee891250a270e0166710e6e0
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/chargebuddy_db",
