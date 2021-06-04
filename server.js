@@ -24,15 +24,21 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(routes);
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
+
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/chargebuddy_db",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
-    // useUnifiedTopology: true,
-    // useCreateIndex: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
   }
 );
+
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
