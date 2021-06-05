@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./BackgroundVideo.module.css";
 
 const LandingPage = () => {
-  const firstVideo = "./images/car.mp4";
+  const firstVideo = "./images/carvideo.mp4";
   const secondVideo = "./images/charging.mp4";
 
   return (
@@ -45,7 +45,7 @@ const LandingPage = () => {
             </p>
             <p> Charge Buddy is not the friend you want but the friend you need!</p>
             <button type="button">
-              <a href="/map">START NOW</a>
+              <a href="/login">START NOW</a>
             </button>
             {/* <a className="waves-effect waves-light btn-large orange darken-2">START NOW</a> */}
           </div>
