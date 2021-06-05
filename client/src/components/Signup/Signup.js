@@ -50,7 +50,6 @@ const Signup = (props) => {
       },
     };
     const newUser = await axios.post("/api/user", user);
-    console.log(newUser.data)
     props.setUser(newUser.data)
     // redirecting user to account page
     if (newUser.data) {
@@ -131,7 +130,7 @@ const Signup = (props) => {
                   </div>
 
                   <div className="input-field">
-                    <label htmlFor="CreatePassword">Create a Password</label>
+                    <label htmlFor="CreatePassword">Password must be at least 8 characters</label>
                     <input
                       type="password"
                       name="password"
@@ -192,7 +191,7 @@ const Signup = (props) => {
                   </div>
 
                   {/* Plug Types */}
-                  <h6 className="center">Plug Type</h6>
+                  <h6 className="center">Choose Plug Type</h6>
                   <br />
 
                   <div className="row">

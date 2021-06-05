@@ -29,7 +29,6 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* <h6>hello</h6> */}
       {/* second video content */}
       <div className={classes.Container}>
         <video autoPlay="autoplay" loop="loop" muted className={classes.Video}>
@@ -47,7 +46,6 @@ const LandingPage = () => {
             <button type="button">
               <a href="/login">START NOW</a>
             </button>
-            {/* <a className="waves-effect waves-light btn-large orange darken-2">START NOW</a> */}
           </div>
         </div>
       </div>
