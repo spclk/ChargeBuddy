@@ -1,8 +1,6 @@
 // Import dependencies and components
 import React, { useEffect, useState } from "react";
 import API from '../../utils/API';
-import Login from "../Login/Login";
-import Signup from "../Signup/Signup";
 import "./style.css"
 import ReactMapGL, { GeolocateControl, Marker, Popup } from 'react-map-gl'
 import StationInfo from "../StationInfo/StationInfo";
@@ -39,8 +37,6 @@ export default function Map() {
       let geojson = [];
       // Create empty array to store charging station coordinates
       let newMarkers = [];
-      // Create empty array to store station info
-      let newStationInfo = [];
       for (let i = 0; i < features.length; i++) {
         //extracting data from API
         let lng = features[i].geometry.coordinates[0];
@@ -118,7 +114,6 @@ export default function Map() {
           <StationInfo info={popupInfo} />
         </Popup>}
       </ReactMapGL>
-      {/* <Login/> */}
     </div>
   );
 }
