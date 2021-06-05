@@ -7,6 +7,7 @@
 ![Database](https://img.shields.io/badge/Database-MongoDB-green)
 ![Deployment](https://img.shields.io/badge/Deployment-Heroku-purple)
 ![Contributors](https://img.shields.io/badge/Contributors-5-green)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 ### Languages and Tools:
 
