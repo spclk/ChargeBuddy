@@ -1,5 +1,11 @@
 # ChargeBuddy
 
+![JavaScript](https://img.shields.io/badge/JavaScript-85.5%25-yellow)
+![CSS](https://img.shields.io/badge/CSS-10.3%25-purple)
+![HTML](https://img.shields.io/badge/HTML-4.2%25-red)
+![Framework](https://img.shields.io/badge/Framework-React-skyblue)
+![Database](https://img.shields.io/badge/Database-MongoDB-green)
+![Deployment](https://img.shields.io/badge/Deployment-Heroku-purple)
 ![Contributors](https://img.shields.io/badge/Contributors-5-green)
 
 ### Languages and Tools:
