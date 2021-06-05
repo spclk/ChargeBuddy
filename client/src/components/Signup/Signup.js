@@ -191,7 +191,7 @@ const Signup = (props) => {
                   </div>
 
                   {/* Plug Types */}
-                  <h6 className="center">Plug Type</h6>
+                  <h6 className="center">Choose Plug Type</h6>
                   <br />
 
                   <div className="row">
