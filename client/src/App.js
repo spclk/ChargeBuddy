@@ -8,7 +8,6 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import Navbar from "./components/Navbar/Navbar";
-import Container from './components/Container/Container';
 import Footer from "./components/Footer/Footer";
 import Account from './components/Account/Account';
 import LandingPage from "./components/LandingPage/LandingPage";
@@ -65,7 +64,6 @@ function App() {
           <Map />
         </Route>
       </Switch>
-      <Container />
       <Footer user={authData.user} />
       </AuthContext.Provider>
     </Router>

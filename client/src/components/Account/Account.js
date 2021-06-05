@@ -1,24 +1,18 @@
 import React, { useEffect, useContext } from "react";
-// import { Redirect } from 'react-router-dom';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import AuthContext from '../../utils/authContext'
-
 
 const Account = (props) => {
   useEffect(() => {
     M.AutoInit();
   })
   useEffect(() => {
-    console.log(props);
-    // console.log(user);
   }, [])
 
+  // Authorized users data from context
   const { authData } = useContext(AuthContext)
-  console.log(authData)
-
-
+  
   const user = authData.user
-  console.log(user)
 
   // redirecting if not a registered user
   const [redirect, setRedirect] = React.useState(false)
@@ -27,10 +21,8 @@ const Account = (props) => {
       setRedirect(true)
     }
   }, [authData])
-  console.log(redirect)
 
   return (
-    // !redirect ?
     user &&
     <div>
       <main>
@@ -40,26 +32,26 @@ const Account = (props) => {
               <span className="settings-title">
                 <h5>Personal Information</h5>
               </span>
-              <p>expand for more details</p>
+              <p className="lime-text text-darken-3">expand for more details</p>
             </div>
 
             <div className="col s12 m8">
               <ul className="collapsible">
                 <li>
                   <div className="collapsible-header">Name</div>
-                  <div className="collapsible-body">
+                  <div className="collapsible-body lime lighten-4">
                     <span>{user.first_name} {user.last_name}</span>
                   </div>
                 </li>
                 <li>
                   <div className="collapsible-header">Email</div>
-                  <div className="collapsible-body">
+                  <div className="collapsible-body lime lighten-4">
                     <span>{user.email}</span>
                   </div>
                 </li>
                 <li>
                   <div className="collapsible-header">Home Location</div>
-                  <div className="collapsible-body">
+                  <div className="collapsible-body lime lighten-4">
                     <span>{user.zip_code}</span>
                   </div>
                 </li>
@@ -72,20 +64,20 @@ const Account = (props) => {
               <span className="settings-title">
                 <h5>Vehicle Information</h5>
               </span>
-              <p>expand for more details</p>
+              <p className="lime-text text-darken-3">expand for more details</p>
             </div>
 
             <div className="col s12 m8">
               <ul className="collapsible">
                 <li>
                   <div className="collapsible-header">Vehicle</div>
-                  <div className="collapsible-body">
+                  <div className="collapsible-body lime lighten-4">
                     <span>{user.car.year} {user.car.make} {user.car.model}</span>
                   </div>
                 </li>
                 <li>
                   <div className="collapsible-header">Plug Type</div>
-                  <div className="collapsible-body">
+                  <div className="collapsible-body lime lighten-4">
                     <span>{user.car.evPort}</span>
                   </div>
                 </li>
@@ -95,13 +87,11 @@ const Account = (props) => {
         </div>
       </main>
       <div className="center-align">
-        <p>Now that you're part of the ChargeBuddy community, </p>
-        <p>start adding prices and tips on the Map page</p>
+        <h6>Now you're part of the ChargeBuddy community! </h6>
+        <br/>
         <a href="/map" className="waves-effect waves-light btn-large lime darken-2">GO TO MAP</a>
       </div>
     </div>
-    // : <Redirect to="/login" />
-
   );
 };
 
