@@ -40,6 +40,8 @@ function Login(props) {
 
   return (
     <main >
+      <br></br>
+      <h6 className="center-align">Please register to view charging stations nearby</h6>
       <div className="cnr container"> {/* without this container, card would take up the whole page */}
         <div className="row">
           <div className="col s12">
