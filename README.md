@@ -9,7 +9,7 @@
 ![Contributors](https://img.shields.io/badge/Contributors-5-green)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-### Languages and Tools:
+### Languages and Tools Used:
 
 <p align="left">
 <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML" width="40" height="40"/></a> 
